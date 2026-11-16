@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday · Azul Viagens Sorriso — Grupo de Ofertas</title>
+<meta name="description" content="Garanta seu cartão de embarque para as ofertas de Black Friday da Azul Viagens Sorriso. Entre no grupo de ofertas no WhatsApp.">
+<meta name="theme-color" content="#05070b">
+<meta property="og:title" content="Black Friday · Azul Viagens Sorriso">
+<meta property="og:description" content="Seu cartão de embarque para as melhores ofertas da Black. Entre no grupo no WhatsApp.">
+<meta property="og:image" content="img/fachada-1.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070b; --bg2:#071428; --line:#14253f;
+  --azul:#41B6E6; --azul2:#7fd0f0; --navy:#041E42; --ink:#f3f7fa; --mute:#8d9aa8;
+  --paper:#f6f8fa; --paper-ink:#041E42;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* faixa black friday */
+.ticker{background:var(--azul);color:#041E42;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding:9px 0;animation:scroll 28s linear infinite}
+.ticker span{margin:0 22px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* fundo */
+.hero{position:relative;padding:28px 0 72px;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(700px 420px at 78% 38%,rgba(65,182,230,.22),transparent 70%),radial-gradient(500px 300px at 8% 0%,rgba(65,182,230,.10),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;
+  mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 72%)}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:56px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600}
+.brand img{width:52px;height:52px;border-radius:50%;box-shadow:0 0 0 2px rgba(65,182,230,.5)}
+.brand small{display:block;color:var(--mute);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.pill{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:8px 14px;color:var(--azul2);background:rgba(11,16,23,.7)}
+.pill i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--azul);margin-right:8px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+
+.grid{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;color:var(--azul2);text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(40px,6.2vw,76px);line-height:.98;font-weight:900;letter-spacing:-.03em;text-wrap:balance}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--azul)}
+h1 b{color:var(--azul)}
+.lead{color:#b9c4cf;font-size:18px;font-weight:300;max-width:46ch;margin:22px 0 28px}
+
+.name{display:flex;flex-direction:column;gap:8px;max-width:420px;margin-bottom:18px}
+.name label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.name input{font:inherit;font-size:16px;color:var(--ink);background:rgba(11,16,23,.85);border:1px solid var(--line);border-radius:12px;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s}
+.name input:focus{border-color:var(--azul);box-shadow:0 0 0 4px rgba(65,182,230,.18)}
+.name input::placeholder{color:#55616e}
+
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--azul);color:#041E42;font-weight:800;font-size:17px;padding:17px 28px;border-radius:14px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 40px -8px rgba(65,182,230,.7)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 48px -8px rgba(65,182,230,.9)}
+.cta svg{width:22px;height:22px;flex:none}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.6) 50%,transparent 60%);transform:translateX(-100%);animation:sweep 3.2s ease-in-out infinite}
+@keyframes sweep{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+
+/* ---------- cartão de embarque ---------- */
+.stage{perspective:1400px}
+.pass{--rx:0deg;--ry:0deg;display:grid;grid-template-columns:1fr 150px;background:var(--paper);color:var(--paper-ink);border-radius:22px;position:relative;
+  transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;
+  box-shadow:0 40px 90px -20px rgba(65,182,230,.45),0 0 0 1px rgba(255,255,255,.08)}
+.issue{animation:issue 1.3s cubic-bezier(.2,.9,.25,1) backwards}
+.floaty{animation:float 6s ease-in-out 1.4s infinite}
+@keyframes issue{0%{opacity:0;transform:translateY(-70px) rotateX(55deg) scale(.9)}60%{opacity:1}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.pass .shine{position:absolute;inset:0;border-radius:22px;overflow:hidden;pointer-events:none}
+.pass .shine::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 38%,rgba(255,255,255,.7) 50%,transparent 62%);transform:translateX(-100%);animation:glare 5s ease-in-out 1.2s infinite}
+@keyframes glare{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+.p-main{padding:0 0 22px;min-width:0}
+.p-head{background:var(--navy);color:#fff;border-radius:22px 0 0 0;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.p-head .lg{font-weight:900;font-size:19px;letter-spacing:-.02em;line-height:1}
+.p-head .lg span{color:var(--azul2);font-weight:300}
+.p-head .bf{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;background:var(--azul);color:#041E42;padding:5px 9px;border-radius:5px;font-weight:700;white-space:nowrap}
+.p-sub{padding:10px 22px 0;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;color:#6b7785;text-transform:uppercase}
+
+.route{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:14px 22px 16px}
+.iata{font-weight:900;font-size:clamp(38px,5vw,54px);line-height:1;letter-spacing:-.03em}
+.city{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6b7785;margin-top:4px}
+.route .to{text-align:right}
+.route .to .iata{color:#1fa3db}
+.track{position:relative;height:26px}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #b6c0ca}
+.track::after{content:"";position:absolute;right:0;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#1fa3db}
+.run{position:absolute;inset:0;animation:fly 3.6s cubic-bezier(.45,0,.3,1) infinite}
+.plane{position:absolute;top:50%;left:0;width:26px;height:26px;margin:-13px 0 0 -13px;color:var(--navy)}
+@keyframes fly{0%{transform:translateX(0);opacity:0}12%{opacity:1}85%{opacity:1}100%{transform:translateX(100%);opacity:0}}
+
+.fields{display:grid;grid-template-columns:repeat(4,auto);gap:14px 18px;padding:14px 22px 0;border-top:1px solid #dfe5ea;justify-content:space-between}
+.f small{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#7b8794}
+.f b{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;white-space:nowrap}
+.f.wide{grid-column:1/-1}
+.f.wide b{font-size:20px;display:block;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.caret::after{content:"";display:inline-block;width:2px;height:1em;background:var(--azul);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+
+.p-stub{border-left:2px dashed #c3ccd5;padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:12px;position:relative;text-align:center}
+.p-stub::before,.p-stub::after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg)}
+.p-stub::before{top:-12px}.p-stub::after{bottom:-12px}
+.p-stub .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7b8794}
+.p-stub .v{font-weight:900;font-size:26px;line-height:1}
+.barcode{position:relative;width:100%;height:70px;overflow:hidden;
+  background:repeating-linear-gradient(90deg,#041E42 0 2px,transparent 2px 4px,#041E42 4px 5px,transparent 5px 9px,#041E42 9px 12px,transparent 12px 14px,#041E42 14px 15px,transparent 15px 17px,#041E42 17px 21px,transparent 21px 23px)}
+.barcode::after{content:"";position:absolute;inset:0;border-top:3px solid #ff2d55;animation:scan 2.4s ease-in-out infinite}
+@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(100% - 3px))}}
+.stamp{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;border:2px solid #1fa3db;color:#1fa3db;padding:4px 8px;border-radius:6px;transform:rotate(-6deg);font-weight:700;animation:stamp .5s cubic-bezier(.2,1.6,.4,1) 1.5s backwards}
+@keyframes stamp{from{opacity:0;transform:rotate(-6deg) scale(2.4)}to{opacity:1;transform:rotate(-6deg) scale(1)}}
+
+/* ---------- seções ---------- */
+section{padding:80px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+h2{font-size:clamp(30px,4vw,48px);font-weight:900;letter-spacing:-.025em;line-height:1.05}
+h2 b{color:var(--azul)}
+.sec-head p{color:var(--mute);max-width:40ch;font-weight:300}
+
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.perk{border:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),transparent);border-radius:18px;padding:26px;transition:border-color .25s,transform .25s}
+.perk:hover{border-color:var(--azul);transform:translateY(-4px)}
+.perk .n{font-family:"JetBrains Mono",monospace;color:var(--azul);font-size:12px;letter-spacing:.2em}
+.perk h3{font-size:21px;font-weight:800;margin:14px 0 8px;letter-spacing:-.01em}
+.perk p{color:var(--mute);font-weight:300;font-size:15.5px}
+
+.gallery{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
+.gallery figure{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);cursor:zoom-in}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:rgba(5,7,11,.75);backdrop-filter:blur(6px);padding:6px 10px;border-radius:99px}
+.g1{grid-row:1/3}.g4{grid-row:1/3;grid-column:3}
+.g2{grid-column:2}.g3{grid-column:2}
+
+.final{text-align:center;padding:90px 0 130px;position:relative}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(600px 300px at 50% 60%,rgba(65,182,230,.2),transparent 70%)}
+.final h2{font-size:clamp(34px,5.4vw,64px);margin-bottom:14px}
+.final p{color:#b9c4cf;font-weight:300;font-size:18px;margin-bottom:30px}
+footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--mute);font-size:13px;text-align:center}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(3,5,8,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:92vh;max-width:100%;border-radius:12px}
+
+/* cta fixo no celular */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
+.sticky .cta{width:100%;padding:15px 18px;font-size:16px}
+
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  header{margin-bottom:34px}
+  .grid{grid-template-columns:1fr;gap:40px}
+  .perks{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 260px}
+  .g1{grid-row:1;grid-column:1/3}.g2{grid-row:2;grid-column:1}.g3{grid-row:2;grid-column:2}.g4{grid-row:3;grid-column:1/3}
+  section{padding:56px 0}
+  .sticky{display:block}
+}
+@media (max-width:560px){
+  .pill{display:none}
+  .pass{grid-template-columns:1fr}
+  .p-head{border-radius:22px 22px 0 0}
+  .p-stub{border-left:0;border-top:2px dashed #c3ccd5;flex-direction:row;padding:16px 22px;text-align:left}
+  .p-stub::before{top:-13px;left:-12px}.p-stub::after{top:-13px;bottom:auto;left:auto;right:-12px}
+  .barcode{height:54px;flex:1}
+  .stamp{display:none}
+  .fields{grid-template-columns:repeat(2,1fr)}
+  .hero .cta{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+
+<div class="hero">
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top">
+        <img src="img/logo.jpg" alt="Azul Viagens Sorriso" width="52" height="52">
+        <div>Azul Viagens Sorriso<small>Sorriso · MT</small></div>
+      </a>
+      <span class="pill"><i></i>Embarque aberto</span>
+    </header>
+
+    <div class="grid" id="top">
+      <div>
+        <p class="eyebrow">// Black Friday 2026</p>
+        <h1>Seu embarque para a <em>Black</em> <b>começa aqui.</b></h1>
+        <p class="lead">Entre no grupo de ofertas da Azul Viagens Sorriso e receba no WhatsApp, em primeira mão, as ofertas de Black Friday em pacotes de viagem.</p>
+
+        <div class="name">
+          <label for="nome">Emita seu cartão de embarque</label>
+          <input id="nome" type="text" maxlength="26" autocomplete="given-name" placeholder="Digite seu nome">
+        </div>
+
+        <a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3 .8.8-3-.2-.3a8.1 8.1 0 0 1 6.8-12.4Zm-3.3 4.1c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.300s1 2.700 1.200 2.900c.1.2 2 3.200 5 4.300 2.400.9 2.900.7 3.400.7.5-.1 1.700-.7 1.900-1.400.2-.6.2-1.200.2-1.300-.1-.2-.3-.2-.6-.4l-1.900-.9c-.3-.1-.5-.2-.7.1l-.9 1.100c-.1.2-.3.2-.6.1-.3-.2-1.200-.4-2.300-1.400-.8-.8-1.400-1.700-1.600-2-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.5-.6-.5h-.7Z"/></svg>
+          Entrar no grupo de ofertas
+        </a>
+        <p class="note">Gratuito · Direto no seu WhatsApp · Saia quando quiser</p>
+      </div>
+
+      <div class="stage">
+        <div class="issue"><div class="floaty">
+        <a class="pass js-wa" id="pass" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener" aria-label="Cartão de embarque — entrar no grupo de ofertas">
+          <div class="p-main">
+            <div class="p-head">
+              <div class="lg">Azul <span>viagens</span></div>
+              <div class="bf">BLACK FRIDAY</div>
+            </div>
+            <div class="p-sub">Cartão de embarque · Boarding pass</div>
+            <div class="route">
+              <div><div class="iata">SMT</div><div class="city">Sorriso · MT</div></div>
+              <div class="track">
+                <div class="run"><svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-.8-.7-1.500-1.500-1.500H15L9.500 2H7.500l2.800 8.500H5.500L3.800 8.200H2.200L3.300 12l-1.100 3.800h1.600l1.700-2.300h4.800L7.500 22h2L15 13.500h5.500c.8 0 1.500-.7 1.500-1.500Z"/></svg></div>
+              </div>
+              <div class="to"><div class="iata">BLK</div><div class="city">Ofertas Black</div></div>
+            </div>
+            <div class="fields">
+              <div class="f wide"><small>Passageiro</small><b id="pax" class="caret">PASSAGEIRO VIP</b></div>
+              <div class="f"><small>Voo</small><b>BLACK 26</b></div>
+              <div class="f"><small>Portão</small><b>WHATSAPP</b></div>
+              <div class="f"><small>Classe</small><b>OFERTAS</b></div>
+              <div class="f"><small>Embarque</small><b>AGORA</b></div>
+            </div>
+          </div>
+          <div class="p-stub">
+            <div><div class="t">Grupo</div><div class="v">VIP</div></div>
+            <div class="barcode"></div>
+            <div class="stamp">CONFIRMADO</div>
+          </div>
+          <div class="shine"></div>
+        </a>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Por que <b>embarcar</b><br>no grupo?</h2>
+      <p>Um canal direto com a agência para você não perder nenhuma oportunidade da Black.</p>
+    </div>
+    <div class="perks">
+      <div class="perk reveal"><span class="n">01</span><h3>Ofertas em primeira mão</h3><p>As promoções de Black Friday chegam primeiro para quem está no grupo.</p></div>
+      <div class="perk reveal"><span class="n">02</span><h3>Pacotes de viagem</h3><p>Ofertas em pacotes para o seu próximo destino, selecionadas pela nossa equipe.</p></div>
+      <div class="perk reveal"><span class="n">03</span><h3>Atendimento de perto</h3><p>Gostou de uma oferta? Fale com a nossa equipe de Sorriso e feche sua viagem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Conheça a <b>nossa agência</b></h2>
+      <p>Estamos na Galeria Cella, em Sorriso – MT. Passe para um café e planeje sua viagem com a gente.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="g1"><img src="img/fachada-1.jpg" alt="Fachada da Azul Viagens Sorriso na Galeria Cella" loading="lazy"><figcaption>Fachada</figcaption></figure>
+      <figure class="g2"><img src="img/interior-1.jpg" alt="Interior da agência Azul Viagens Sorriso" loading="lazy"><figcaption>Recepção</figcaption></figure>
+      <figure class="g3"><img src="img/fachada-2.jpg" alt="Vista lateral da fachada da agência" loading="lazy"><figcaption>Galeria Cella</figcaption></figure>
+      <figure class="g4"><img src="img/interior-2.jpg" alt="Sala de espera da Azul Viagens Sorriso" loading="lazy"><figcaption>Sala de espera</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <p class="eyebrow">// Última chamada</p>
+    <h2>Embarque imediato<br>para as <b>ofertas da Black.</b></h2>
+    <p>Seu lugar no grupo está reservado. É só entrar.</p>
+    <a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">Quero entrar no grupo →</a>
+  </div>
+</section>
+
+<footer><div class="wrap">Azul Viagens Sorriso · Galeria Cella · Sorriso – MT</div></footer>
+
+<div class="sticky"><a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">Entrar no grupo de ofertas</a></div>
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+(function(){
+if(!('IntersectionObserver' in window))return;
+// faixa
+const tk=document.getElementById('tk');
+tk.innerHTML=('<span>Black Friday</span><span>✈</span><span>Grupo de ofertas</span><span>✈</span><span>Azul Viagens Sorriso</span><span>✈</span>').repeat(12);
+
+// nome no cartão
+const nome=document.getElementById('nome'),pax=document.getElementById('pax');
+try{const s=localStorage.getItem('pax');if(s){nome.value=s;pax.textContent=s.toUpperCase()}}catch(e){}
+nome.addEventListener('input',()=>{
+  const v=nome.value.trim();
+  pax.textContent=v?v.toUpperCase():'PASSAGEIRO VIP';
+  try{localStorage.setItem('pax',v)}catch(e){}
+});
+
+// inclinação 3D do cartão
+const pass=document.getElementById('pass');
+if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const st=pass.closest('.stage');
+  st.addEventListener('pointermove',e=>{
+    const r=pass.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    pass.style.setProperty('--ry',(x*12)+'deg');pass.style.setProperty('--rx',(-y*10)+'deg');
+  });
+  st.addEventListener('pointerleave',()=>{pass.style.setProperty('--ry','0deg');pass.style.setProperty('--rx','0deg')});
+}
+
+// aparecer ao rolar
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*90)+'ms';io.observe(el)});
+
+// cta fixo só depois do botão principal sair da tela
+const stk=document.querySelector('.sticky');stk.style.transition='opacity .3s,transform .3s';
+new IntersectionObserver(([e])=>{stk.style.opacity=e.isIntersecting?0:1;stk.style.pointerEvents=e.isIntersecting?'none':'auto';stk.style.transform=e.isIntersecting?'translateY(20px)':'none'}).observe(document.querySelector('.hero .cta'));
+
+// galeria
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gallery figure').forEach(f=>f.addEventListener('click',()=>{lb.firstElementChild.src=f.querySelector('img').src;lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+})();
+</script>
+</body>
+</html>
