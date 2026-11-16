@@ -2,344 +2,1182 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Black Friday · Azul Viagens Sorriso — Grupo de Ofertas</title>
-<meta name="description" content="Garanta seu cartão de embarque para as ofertas de Black Friday da Azul Viagens Sorriso. Entre no grupo de ofertas no WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Azul Viagens Sorriso — Pacotes com embarque imediato</title>
+<meta name="description" content="Azul Viagens Sorriso, na Galeria Cella em Sorriso – MT. Pacotes para Orlando, cruzeiros Costa Diadema e Lisboa. Escolha seu destino e fale com a nossa equipe.">
 <meta name="theme-color" content="#05070b">
-<meta property="og:title" content="Black Friday · Azul Viagens Sorriso">
-<meta property="og:description" content="Seu cartão de embarque para as melhores ofertas da Black. Entre no grupo no WhatsApp.">
+<meta property="og:title" content="Azul Viagens Sorriso — Pacotes com embarque imediato">
+<meta property="og:description" content="Orlando, cruzeiros e Lisboa. Escolha seu destino e fale com a nossa equipe em Sorriso – MT.">
 <meta property="og:image" content="img/fachada-1.jpg">
-<meta property="og:type" content="website">
 <link rel="icon" href="img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;500;800;900&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
 <style>
 :root{
-  --bg:#05070b; --bg2:#071428; --line:#14253f;
-  --azul:#41B6E6; --azul2:#7fd0f0; --navy:#041E42; --ink:#f3f7fa; --mute:#8d9aa8;
-  --paper:#f6f8fa; --paper-ink:#041E42;
+  --bg:#05070b; --card:#071428; --line:#14253f;
+  --blue:#41B6E6; --blue2:#7fd0f0; --navy:#041E42;
+  --txt:#f3f7fa; --txt2:#b9c4cf; --txt3:#8d9aa8;
+  --paper:#f6f8fa; --scan:#ff2d55;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:300;font-size:18px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{margin:0;font-weight:900;letter-spacing:-.03em;line-height:1}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:56px 0;position:relative}
+@media(min-width:901px){section{padding:80px 0}}
+.mono{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.2em;font-size:11px}
+.label{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--blue2);margin-bottom:14px;display:block}
+.blue{color:var(--blue)}
+.outline{color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
-/* faixa black friday */
-.ticker{background:var(--azul);color:#041E42;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
-.ticker div{display:inline-block;padding:9px 0;animation:scroll 28s linear infinite}
-.ticker span{margin:0 22px}
-@keyframes scroll{to{transform:translateX(-50%)}}
+/* atmosfera */
+.atmo{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.atmo::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.55;
+  -webkit-mask-image:radial-gradient(ellipse 70% 65% at 50% 40%,#000 0%,transparent 75%);
+          mask-image:radial-gradient(ellipse 70% 65% at 50% 40%,#000 0%,transparent 75%)}
+.atmo::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(520px 380px at 78% 38%,rgba(65,182,230,.20),transparent 70%),radial-gradient(480px 360px at 10% 0%,rgba(65,182,230,.10),transparent 70%)}
+.glow{position:absolute;pointer-events:none;inset:0;z-index:0;background:radial-gradient(600px 320px at 50% 0%,rgba(65,182,230,.10),transparent 70%)}
+section>.wrap,header>.wrap{position:relative;z-index:1}
 
-/* fundo */
-.hero{position:relative;padding:28px 0 72px;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(700px 420px at 78% 38%,rgba(65,182,230,.22),transparent 70%),radial-gradient(500px 300px at 8% 0%,rgba(65,182,230,.10),transparent 70%)}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;
-  mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 72%)}
+/* faixa */
+.marquee{background:var(--blue);color:var(--navy);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.12em;overflow:hidden;white-space:nowrap;padding:9px 0}
+.marquee .track{display:inline-flex;animation:marq 32s linear infinite;will-change:transform}
+.marquee span{padding:0 14px}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:56px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:600}
-.brand img{width:52px;height:52px;border-radius:50%;box-shadow:0 0 0 2px rgba(65,182,230,.5)}
-.brand small{display:block;color:var(--mute);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.pill{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:8px 14px;color:var(--azul2);background:rgba(11,16,23,.7)}
-.pill i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--azul);margin-right:8px;animation:blink 1.4s infinite}
-@keyframes blink{50%{opacity:.25}}
+/* cabeçalho */
+header{padding:18px 0;position:relative;z-index:2}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--txt);min-width:0}
+.logo{width:52px;height:52px;border-radius:50%;flex:none;box-shadow:0 0 0 2px var(--blue),0 0 24px rgba(65,182,230,.45);overflow:hidden;background:#fff;display:grid;place-items:center;position:relative}
+.logo .lg{display:block;text-align:right;line-height:.82;letter-spacing:-.05em}
+.logo .lg b{display:block;color:#000;font-weight:900;font-size:15px}
+.logo .lg i{display:block;color:#41B6E6;font-weight:300;font-style:normal;font-size:14px}
+.logo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.brand b{display:block;font-weight:800;font-size:17px;line-height:1.1;letter-spacing:-.01em}
+.brand small{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--blue2);text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt2);white-space:nowrap}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.2}}
+@media(max-width:420px){.pill .long{display:none}}
 
-.grid{display:grid;grid-template-columns:1fr 1.08fr;gap:56px;align-items:center}
-.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;color:var(--azul2);text-transform:uppercase;margin-bottom:18px}
-h1{font-size:clamp(40px,6.2vw,76px);line-height:.98;font-weight:900;letter-spacing:-.03em;text-wrap:balance}
-h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--azul)}
-h1 b{color:var(--azul)}
-.lead{color:#b9c4cf;font-size:18px;font-weight:300;max-width:46ch;margin:22px 0 28px}
+/* botão */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:var(--navy);font-weight:800;font-size:17px;border:0;border-radius:14px;padding:17px 28px;overflow:hidden;box-shadow:0 12px 40px -8px rgba(65,182,230,.6);transition:transform .25s ease;text-align:center;line-height:1.15}
+.btn:hover{transform:translateY(-2px)}
+.btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-160%) skewX(-18deg);animation:shine 3s ease-in-out infinite}
+@keyframes shine{0%,55%{transform:translateX(-160%) skewX(-18deg)}100%{transform:translateX(420%) skewX(-18deg)}}
+.btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line);box-shadow:none;font-weight:500}
+.btn.ghost::after{display:none}
+.btn.ghost:hover{border-color:var(--blue)}
 
-.name{display:flex;flex-direction:column;gap:8px;max-width:420px;margin-bottom:18px}
-.name label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.name input{font:inherit;font-size:16px;color:var(--ink);background:rgba(11,16,23,.85);border:1px solid var(--line);border-radius:12px;padding:14px 16px;outline:none;transition:border-color .2s,box-shadow .2s}
-.name input:focus{border-color:var(--azul);box-shadow:0 0 0 4px rgba(65,182,230,.18)}
-.name input::placeholder{color:#55616e}
+/* abertura */
+.hero{padding-top:36px;overflow:hidden}
+.hero-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:901px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.hero h1{font-size:clamp(44px,11vw,88px)}
+.hero p.lede{color:var(--txt2);margin:22px 0 30px;max-width:520px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media(max-width:520px){.cta-row .btn{width:100%}}
+.steps3{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;color:var(--txt3)}
+.steps3 b{color:var(--blue2);font-weight:700}
 
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--azul);color:#041E42;font-weight:800;font-size:17px;padding:17px 28px;border-radius:14px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 40px -8px rgba(65,182,230,.7)}
-.cta:hover{transform:translateY(-2px);box-shadow:0 16px 48px -8px rgba(65,182,230,.9)}
-.cta svg{width:22px;height:22px;flex:none}
-.cta::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.6) 50%,transparent 60%);transform:translateX(-100%);animation:sweep 3.2s ease-in-out infinite}
-@keyframes sweep{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-.note{font-size:13px;color:var(--mute);margin-top:14px}
-
-/* ---------- cartão de embarque ---------- */
-.stage{perspective:1400px}
-.pass{--rx:0deg;--ry:0deg;display:grid;grid-template-columns:1fr 150px;background:var(--paper);color:var(--paper-ink);border-radius:22px;position:relative;
-  transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;
-  box-shadow:0 40px 90px -20px rgba(65,182,230,.45),0 0 0 1px rgba(255,255,255,.08)}
-.issue{animation:issue 1.3s cubic-bezier(.2,.9,.25,1) backwards}
-.floaty{animation:float 6s ease-in-out 1.4s infinite}
-@keyframes issue{0%{opacity:0;transform:translateY(-70px) rotateX(55deg) scale(.9)}60%{opacity:1}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.pass .shine{position:absolute;inset:0;border-radius:22px;overflow:hidden;pointer-events:none}
-.pass .shine::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 38%,rgba(255,255,255,.7) 50%,transparent 62%);transform:translateX(-100%);animation:glare 5s ease-in-out 1.2s infinite}
-@keyframes glare{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-
-.p-main{padding:0 0 22px;min-width:0}
-.p-head{background:var(--navy);color:#fff;border-radius:22px 0 0 0;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.p-head .lg{font-weight:900;font-size:19px;letter-spacing:-.02em;line-height:1}
-.p-head .lg span{color:var(--azul2);font-weight:300}
-.p-head .bf{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;background:var(--azul);color:#041E42;padding:5px 9px;border-radius:5px;font-weight:700;white-space:nowrap}
-.p-sub{padding:10px 22px 0;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;color:#6b7785;text-transform:uppercase}
-
-.route{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:14px 22px 16px}
-.iata{font-weight:900;font-size:clamp(38px,5vw,54px);line-height:1;letter-spacing:-.03em}
-.city{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6b7785;margin-top:4px}
-.route .to{text-align:right}
-.route .to .iata{color:#1fa3db}
-.track{position:relative;height:26px}
-.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #b6c0ca}
-.track::after{content:"";position:absolute;right:0;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#1fa3db}
-.run{position:absolute;inset:0;animation:fly 3.6s cubic-bezier(.45,0,.3,1) infinite}
-.plane{position:absolute;top:50%;left:0;width:26px;height:26px;margin:-13px 0 0 -13px;color:var(--navy)}
-@keyframes fly{0%{transform:translateX(0);opacity:0}12%{opacity:1}85%{opacity:1}100%{transform:translateX(100%);opacity:0}}
-
-.fields{display:grid;grid-template-columns:repeat(4,auto);gap:14px 18px;padding:14px 22px 0;border-top:1px solid #dfe5ea;justify-content:space-between}
-.f small{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#7b8794}
-.f b{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;white-space:nowrap}
+/* bilhete da abertura */
+.stage{perspective:1200px;display:flex;justify-content:center}
+.tilt{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;transform-style:preserve-3d;width:100%;max-width:420px}
+.pass{background:var(--paper);color:var(--navy);border-radius:22px;overflow:hidden;position:relative;box-shadow:0 40px 100px -30px rgba(65,182,230,.55),0 0 0 1px rgba(65,182,230,.25);animation:emit 1.2s cubic-bezier(.2,.8,.2,1) both,floaty 6s ease-in-out 1.2s infinite}
+@keyframes emit{0%{opacity:0;transform:translateY(-70px) rotateX(55deg) rotateZ(-4deg)}70%{opacity:1;transform:translateY(6px) rotateX(-4deg) rotateZ(.5deg)}100%{opacity:1;transform:none}}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+.t-head{background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 20px}
+.t-head .tag{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);background:var(--blue);padding:5px 9px;border-radius:6px;white-space:nowrap}
+.t-head .who{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);text-align:right}
+.route{display:flex;align-items:center;gap:12px;padding:20px 20px 6px}
+.ap b{display:block;font-weight:900;font-size:clamp(40px,10vw,60px);letter-spacing:-.04em;line-height:.95}
+.ap span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#5b6f8c}
+.ap.r{text-align:right}
+.path{flex:1;height:26px;position:relative;overflow:hidden;min-width:40px;background:repeating-linear-gradient(90deg,#9db2c9 0 6px,transparent 6px 12px) center/100% 2px no-repeat}
+.fly{position:absolute;inset:0;animation:fly 4.5s linear infinite;color:var(--blue);font-size:20px;line-height:26px;font-style:normal;will-change:transform}
+@keyframes fly{from{transform:translateX(-12%)}to{transform:translateX(100%)}}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;padding:14px 20px 18px}
+.f small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#6c7f99;margin-bottom:3px}
+.f b{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;line-height:1.3;display:block}
 .f.wide{grid-column:1/-1}
-.f.wide b{font-size:20px;display:block;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-.caret::after{content:"";display:inline-block;width:2px;height:1em;background:var(--azul);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+.tear{border-top:2px dashed #c3ceda;position:relative;margin:0}
+.tear::before,.tear::after{content:"";position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;background:var(--bg)}
+.tear::before{left:-13px}.tear::after{right:-13px}
+.pass-foot{display:flex;align-items:center;gap:16px;padding:18px 20px}
+.barcode{position:relative;height:52px;flex:1;overflow:hidden;background:repeating-linear-gradient(90deg,var(--navy) 0 2px,transparent 2px 5px,var(--navy) 5px 6px,transparent 6px 10px,var(--navy) 10px 13px,transparent 13px 15px,var(--navy) 15px 16px,transparent 16px 21px,var(--navy) 21px 25px,transparent 25px 27px)}
+.barcode::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--scan);box-shadow:0 0 8px var(--scan);animation:scan 2.2s ease-in-out infinite alternate}
+@keyframes scan{to{transform:translateY(50px)}}
+.stamp{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#1c8fc0;border:2px solid var(--blue);border-radius:8px;padding:7px 10px;transform:rotate(-8deg);text-align:center;line-height:1.35;flex:none}
+#heroDest{display:inline-block;transition:opacity .35s ease}
 
-.p-stub{border-left:2px dashed #c3ccd5;padding:18px 16px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:12px;position:relative;text-align:center}
-.p-stub::before,.p-stub::after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg)}
-.p-stub::before{top:-12px}.p-stub::after{bottom:-12px}
-.p-stub .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7b8794}
-.p-stub .v{font-weight:900;font-size:26px;line-height:1}
-.barcode{position:relative;width:100%;height:70px;overflow:hidden;
-  background:repeating-linear-gradient(90deg,#041E42 0 2px,transparent 2px 4px,#041E42 4px 5px,transparent 5px 9px,#041E42 9px 12px,transparent 12px 14px,#041E42 14px 15px,transparent 15px 17px,#041E42 17px 21px,transparent 21px 23px)}
-.barcode::after{content:"";position:absolute;inset:0;border-top:3px solid #ff2d55;animation:scan 2.4s ease-in-out infinite}
-@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(100% - 3px))}}
-.stamp{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;border:2px solid #1fa3db;color:#1fa3db;padding:4px 8px;border-radius:6px;transform:rotate(-6deg);font-weight:700;animation:stamp .5s cubic-bezier(.2,1.6,.4,1) 1.5s backwards}
-@keyframes stamp{from{opacity:0;transform:rotate(-6deg) scale(2.4)}to{opacity:1;transform:rotate(-6deg) scale(1)}}
+/* cabeçalho de seção */
+.sec-head{display:grid;gap:16px;margin-bottom:36px;align-items:end}
+@media(min-width:901px){.sec-head{grid-template-columns:1fr 1fr;gap:48px}}
+.sec-head h2{font-size:clamp(36px,7.5vw,60px)}
+.sec-head p{color:var(--txt3);font-weight:300}
 
-/* ---------- seções ---------- */
-section{padding:80px 0}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
-h2{font-size:clamp(30px,4vw,48px);font-weight:900;letter-spacing:-.025em;line-height:1.05}
-h2 b{color:var(--azul)}
-.sec-head p{color:var(--mute);max-width:40ch;font-weight:300}
+/* pacotes */
+.tickets{display:grid;gap:26px}
+.ticket{background:var(--paper);color:var(--navy);border-radius:22px;overflow:hidden;position:relative;display:grid;box-shadow:0 30px 90px -40px rgba(65,182,230,.55);transition:transform .35s ease,box-shadow .35s ease}
+.ticket:hover{transform:translateY(-4px);box-shadow:0 36px 100px -34px rgba(65,182,230,.75)}
+.t-main{min-width:0}
+.t-photo{display:flex;gap:3px;height:180px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--navy);border-bottom:3px solid var(--blue)}
+.t-photo::-webkit-scrollbar{display:none}
+.t-photo img{flex:1 0 80%;min-width:0;max-width:none;height:100%;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
+.t-photo img:only-child{flex-basis:100%}
+@media(min-width:621px){.t-photo{height:210px;overflow:hidden}.t-photo img{flex:1 1 0}}
+.t-photo.noimg{display:none}
+.t-video{position:relative;height:300px;background:var(--navy);overflow:hidden}
+.t-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t-video span{position:absolute;left:12px;bottom:12px;background:rgba(5,7,11,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:99px;padding:6px 12px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;color:var(--txt)}
+@media(min-width:901px){.ticket.has-video{grid-template-columns:230px 1fr 300px}.t-video{height:auto;min-height:100%}}
+.t-title{padding:4px 20px 0;font-size:26px;font-weight:900}
+.t-sub{padding:6px 20px 0;font-size:15px;color:#3b5273;font-weight:500}
+.ticket .fields{grid-template-columns:1fr 1fr}
+@media(min-width:620px){.ticket .fields{grid-template-columns:repeat(3,1fr)}}
+.more{margin:0 20px 20px;border-top:1px solid #dbe3ec;font-size:15px;line-height:1.5}
+.more summary{cursor:pointer;list-style:none;padding:14px 0 4px;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#1c7fb0;display:flex;justify-content:space-between;align-items:center}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-size:18px;letter-spacing:0}
+.more[open] summary::after{content:"–"}
+.more h4{margin:14px 0 6px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#6c7f99;font-weight:700}
+.more ul{margin:0;padding-left:18px}
+.more li{margin:3px 0}
+.more .fine{font-size:13px;color:#5b6f8c;margin-top:12px}
+.t-stub{position:relative;padding:22px 20px 22px;border-top:2px dashed #c3ceda;display:flex;flex-direction:column;gap:12px}
+.t-stub::before,.t-stub::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--bg);top:-14px}
+.t-stub::before{left:-13px}.t-stub::after{right:-13px}
+.price small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#6c7f99}
+.price b{display:block;font-weight:900;font-size:34px;letter-spacing:-.03em;line-height:1.05;margin-top:2px}
+.price b.sm{font-size:26px}
+.price span{display:block;font-size:14px;font-weight:500;color:#3b5273;margin-top:4px;line-height:1.4}
+.t-stub .barcode{flex:none;height:40px}
+.t-stub .barcode::after{animation-name:scan2}
+@keyframes scan2{to{transform:translateY(38px)}}
+.t-stub .btn{width:100%;font-size:16px;padding:15px 18px}
+.t-stub .stamp{align-self:flex-start}
+.t-link{font-size:14px;font-weight:500;color:#1c7fb0;text-align:center;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:901px){
+  .ticket{grid-template-columns:1fr 310px}
+  .t-stub{border-top:0;border-left:2px dashed #c3ceda;justify-content:center}
+  .t-stub::before{left:-14px;top:-13px}
+  .t-stub::after{left:-14px;right:auto;top:auto;bottom:-13px}
+}
+.disclaimer{color:var(--txt3);font-size:14px;margin-top:22px;text-align:center}
 
-.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.perk{border:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),transparent);border-radius:18px;padding:26px;transition:border-color .25s,transform .25s}
-.perk:hover{border-color:var(--azul);transform:translateY(-4px)}
-.perk .n{font-family:"JetBrains Mono",monospace;color:var(--azul);font-size:12px;letter-spacing:.2em}
-.perk h3{font-size:21px;font-weight:800;margin:14px 0 8px;letter-spacing:-.01em}
-.perk p{color:var(--mute);font-weight:300;font-size:15.5px}
+/* cards escuros (como funciona) */
+.cards{display:grid;gap:14px;margin-top:40px}
+@media(min-width:761px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .3s ease,border-color .3s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--blue)}
+.card .n{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--blue)}
+.card h3{font-size:22px;font-weight:800;letter-spacing:-.02em;margin:12px 0 8px;line-height:1.1}
+.card p{color:var(--txt2);font-size:16px}
 
+/* galeria */
 .gallery{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
-.gallery figure{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);cursor:zoom-in}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.gallery figure:hover img{transform:scale(1.06)}
-.gallery figcaption{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:rgba(5,7,11,.75);backdrop-filter:blur(6px);padding:6px 10px;border-radius:99px}
-.g1{grid-row:1/3}.g4{grid-row:1/3;grid-column:3}
-.g2{grid-column:2}.g3{grid-column:2}
+.ph{position:relative;margin:0;border-radius:18px;border:1px solid var(--line);overflow:hidden;cursor:zoom-in;background:linear-gradient(135deg,var(--card),#0a1d3a)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.ph:hover img{transform:scale(1.06)}
+.ph.noimg img{display:none}
+.ph.noimg{cursor:default}
+.ph figcaption{position:absolute;left:12px;bottom:12px;background:rgba(5,7,11,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:99px;padding:6px 12px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;color:var(--txt)}
+.gallery{grid-template-columns:1.5fr 1fr}
+.g1{grid-column:1;grid-row:1/3}.g3{grid-column:2;grid-row:1}.g4{grid-column:2;grid-row:2}
+@media(max-width:900px){
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px}
+  .g1{grid-column:1/3;grid-row:1}.g3{grid-column:1;grid-row:2}.g4{grid-column:2;grid-row:2}
+}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(3,5,8,.94);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
+.lightbox.on{opacity:1;visibility:visible}
+.lightbox img{max-width:100%;max-height:100%;border-radius:12px;object-fit:contain}
 
-.final{text-align:center;padding:90px 0 130px;position:relative}
-.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(600px 300px at 50% 60%,rgba(65,182,230,.2),transparent 70%)}
-.final h2{font-size:clamp(34px,5.4vw,64px);margin-bottom:14px}
-.final p{color:#b9c4cf;font-weight:300;font-size:18px;margin-bottom:30px}
-footer{border-top:1px solid var(--line);padding:26px 0 110px;color:var(--mute);font-size:13px;text-align:center}
+/* equipe */
+.team-photo{height:240px;border-radius:18px;border:1px solid var(--line);overflow:hidden;margin-bottom:14px}
+.team-photo img{width:100%;height:100%;object-fit:cover}
+@media(min-width:901px){.team-photo{height:360px}}
+.team{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.member{flex:0 0 calc(50% - 7px)}
+@media(min-width:901px){.member{flex-basis:calc(25% - 10.5px)}}
+.member{position:relative;margin:0;aspect-ratio:4/5;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:var(--card);transition:border-color .3s ease}
+.member:hover{border-color:var(--blue)}
+.member img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .7s ease}
+.member:hover img{transform:scale(1.06)}
+.member.semnome::after{display:none}
+.member::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(180deg,transparent,rgba(5,7,11,.85));pointer-events:none}
+.member figcaption{position:absolute;left:14px;right:14px;bottom:14px;z-index:1}
+.member b{display:block;font-weight:800;font-size:18px;color:#fff;line-height:1.15}
+.member span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--blue2)}
 
-/* lightbox */
-.lb{position:fixed;inset:0;background:rgba(3,5,8,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
-.lb.on{display:flex}
-.lb img{max-height:92vh;max-width:100%;border-radius:12px}
+/* instagram */
+.ig-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:901px){.ig-grid{grid-template-columns:1.1fr .9fr}}
+.ig h2{font-size:clamp(36px,7.5vw,60px)}
+.ig p.lede{color:var(--txt2);margin:20px 0 26px;max-width:480px}
+.ig .handle{display:inline-flex;margin-bottom:22px;color:var(--blue2)}
+.ig-hint{margin-top:22px;color:var(--txt3);display:block}
+.story{position:relative;width:100%;max-width:330px;aspect-ratio:9/16;margin:0 auto;border-radius:28px;border:1px solid var(--line);overflow:hidden;background:var(--card);box-shadow:0 40px 100px -30px rgba(65,182,230,.55);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.story{background:var(--navy)}
+.slide{position:absolute;left:0;right:0;top:22px;bottom:0;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s}
+.slide.on{opacity:1;visibility:visible}
+.slide{display:block;top:0;background:linear-gradient(170deg,#0b2d5c,var(--card) 75%);color:#fff}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide.wide img{object-fit:contain}
+.slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,11,.7),transparent 22%,transparent 72%,rgba(5,7,11,.75));pointer-events:none;z-index:1}
+.s-open{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:2;white-space:nowrap;background:rgba(5,7,11,.75);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 16px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.16em}
+.slide:hover .s-open{border-color:var(--blue)}
+.segs{position:absolute;top:9px;left:12px;right:12px;display:flex;gap:4px;z-index:3;pointer-events:none}
+.segs i{flex:1;height:3px;background:rgba(255,255,255,.25);border-radius:3px;overflow:hidden}
+.segs i b{display:block;height:100%;background:var(--blue);transform-origin:left;transform:scaleX(0);transition:transform .4s ease}
+.segs i.full b,.segs i.on b{transform:none}
+.story-box{display:grid;gap:18px;justify-items:center}
+.js .story-box .arrows{display:flex}
+.story-box .arrows{display:none}
+.arrows{display:flex;align-items:center;gap:12px;color:var(--txt3)}
+.arrow{width:48px;height:48px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--blue);font-size:20px;line-height:1;transition:border-color .2s ease,transform .2s ease,opacity .2s ease}
+.arrow:hover{border-color:var(--blue);transform:translateY(-2px)}
+.arrow:disabled{opacity:.35;cursor:default;transform:none;border-color:var(--line)}
 
-/* cta fixo no celular */
-.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none}
-.sticky .cta{width:100%;padding:15px 18px;font-size:16px}
+/* chamada final */
+.final{text-align:center;overflow:hidden}
+.final h2{font-size:clamp(40px,9vw,76px);max-width:820px;margin:0 auto}
+.final p{color:var(--txt2);max-width:520px;margin:20px auto 30px}
 
-.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;text-align:center;color:var(--txt3);font-size:15px}
+footer .mono{display:block;margin-bottom:10px;color:var(--blue2)}
+footer a{color:var(--txt2)}
+footer .links{display:flex;gap:8px 20px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+
+/* botão fixo no celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(5,7,11,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .35s ease;display:none}
+.sticky .btn{width:100%;padding:15px}
+.sticky.on{transform:none}
+@media(max-width:900px){.js .sticky{display:block}.js body{padding-bottom:0}}
+
+/* entrada na rolagem */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
 
-@media (max-width:900px){
-  header{margin-bottom:34px}
-  .grid{grid-template-columns:1fr;gap:40px}
-  .perks{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 260px}
-  .g1{grid-row:1;grid-column:1/3}.g2{grid-row:2;grid-column:1}.g3{grid-row:2;grid-column:2}.g4{grid-row:3;grid-column:1/3}
-  section{padding:56px 0}
-  .sticky{display:block}
-}
-@media (max-width:560px){
-  .pill{display:none}
-  .pass{grid-template-columns:1fr}
-  .p-head{border-radius:22px 22px 0 0}
-  .p-stub{border-left:0;border-top:2px dashed #c3ccd5;flex-direction:row;padding:16px 22px;text-align:left}
-  .p-stub::before{top:-13px;left:-12px}.p-stub::after{top:-13px;bottom:auto;left:auto;right:-12px}
-  .barcode{height:54px;flex:1}
-  .stamp{display:none}
-  .fields{grid-template-columns:repeat(2,1fr)}
-  .hero .cta{width:100%}
-}
-@media (prefers-reduced-motion:reduce){
+/* formulário */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(3,5,8,.9);display:flex;align-items:flex-end;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
+.modal.on{opacity:1;visibility:visible}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:560px;max-height:100%;height:100%;display:flex;flex-direction:column;transform:translateY(30px);transition:transform .3s ease;box-shadow:0 0 120px -20px rgba(65,182,230,.4)}
+.modal.on .sheet{transform:none}
+@media(min-width:621px){.modal{align-items:center;padding:24px}.sheet{border-radius:22px;height:auto;max-height:min(760px,100%);min-height:560px}}
+@media(max-width:620px){.sheet{border-radius:0;border:0}}
+.f-top{padding:18px 20px 14px;border-bottom:1px solid var(--line)}
+.f-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.f-step{color:var(--blue2)}
+.f-close{background:none;border:1px solid var(--line);color:var(--txt2);width:38px;height:38px;border-radius:50%;font-size:18px;line-height:1}
+.f-close:hover{border-color:var(--blue)}
+.f-pkg{margin-top:8px;font-weight:800;font-size:15px;color:var(--txt);min-height:1.2em}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;width:100%;background:var(--blue);box-shadow:0 0 12px var(--blue);transform-origin:left;transform:scaleX(0);transition:transform .4s ease}
+.f-body{padding:24px 20px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
+.f-body h3{font-size:26px;font-weight:900;line-height:1.08;outline:0}
+.f-body h3 .req{color:var(--blue)}
+.f-hint{color:var(--txt3);font-size:15px;margin-top:8px}
+.f-ref{margin-top:14px;border:1px dashed var(--line);border-radius:12px;padding:12px 14px}
+.f-ref small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2)}
+.f-ref b{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.03em}
+.opts{display:grid;gap:10px;margin-top:20px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:rgba(5,7,11,.5);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:17px;font-weight:500;color:var(--txt);min-height:58px;transition:border-color .2s ease,background .2s ease}
+.opt::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid var(--txt3);flex:none;transition:all .2s ease}
+.opt:hover{border-color:var(--blue)}
+.opt[aria-checked="true"]{border-color:var(--blue);background:rgba(65,182,230,.12)}
+.opt[aria-checked="true"]::before{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 3px var(--card)}
+.opt small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);margin-top:3px;font-weight:500}
+.stepper{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:28px}
+.stepper button{width:60px;height:60px;border-radius:16px;background:rgba(5,7,11,.5);border:1px solid var(--line);font-size:28px;font-weight:500;color:var(--blue)}
+.stepper button:hover{border-color:var(--blue)}
+.stepper output{font-weight:900;font-size:64px;min-width:90px;text-align:center;line-height:1}
+.field{margin-top:18px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:8px}
+.field input{width:100%;background:rgba(5,7,11,.5);border:1px solid var(--line);border-radius:14px;padding:16px;font:inherit;font-weight:500;font-size:18px;color:var(--txt)}
+.field input:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(65,182,230,.2)}
+.field input::placeholder{color:#5d6b7b;font-weight:300}
+.f-err{color:#ff8fa3;font-size:15px;font-weight:500;margin-top:14px;min-height:1.4em}
+.f-nav{display:flex;gap:10px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.f-nav .btn{flex:1;padding:15px}
+.f-nav .btn.ghost{flex:0 0 auto;padding:15px 20px}
+.f-note{font-size:13px;color:var(--txt3);margin-top:16px}
+.done{text-align:center;padding-top:12px}
+.done .stamp{display:inline-block;transform:rotate(-6deg);color:var(--blue);font-size:12px;margin-bottom:22px}
+.done h3{font-size:34px}
+.done p{color:var(--txt2);margin:16px 0 26px}
+.done .btn{width:100%}
+.done .loc{margin-top:18px;color:var(--txt3)}
+
+@media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none}
+  .fly{transform:translateX(44%)}
 }
 </style>
 </head>
 <body>
 
-<div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+<!-- 1. FAIXA + CABEÇALHO -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Embarque imediato</span><span>✈&#xFE0E;</span><span>Última chamada</span><span>✈&#xFE0E;</span><span>Orlando · voos diretos Azul</span><span>✈&#xFE0E;</span><span>Cruzeiro Costa Diadema</span><span>✈&#xFE0E;</span><span>Lisboa</span><span>✈&#xFE0E;</span><span>Azul Viagens Sorriso</span><span>✈&#xFE0E;</span>
+    <span>Embarque imediato</span><span>✈&#xFE0E;</span><span>Última chamada</span><span>✈&#xFE0E;</span><span>Orlando · voos diretos Azul</span><span>✈&#xFE0E;</span><span>Cruzeiro Costa Diadema</span><span>✈&#xFE0E;</span><span>Lisboa</span><span>✈&#xFE0E;</span><span>Azul Viagens Sorriso</span><span>✈&#xFE0E;</span>
+  </div>
+</div>
 
-<div class="hero">
-  <div class="wrap">
-    <header>
-      <a class="brand" href="#top">
-        <img src="img/logo.jpg" alt="Azul Viagens Sorriso" width="52" height="52">
-        <div>Azul Viagens Sorriso<small>Sorriso · MT</small></div>
-      </a>
-      <span class="pill"><i></i>Embarque aberto</span>
-    </header>
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#topo" aria-label="Azul Viagens Sorriso">
+      <span class="logo"><span class="lg"><b>Azul</b><i>viagens</i></span><img src="img/logo.jpg" alt="" width="52" height="52" onerror="this.remove()"></span>
+      <span><b>Azul Viagens Sorriso</b><small>Sorriso · MT</small></span>
+    </a>
+    <span class="pill"><i class="dot"></i>Embarque<span class="long">&nbsp;aberto</span></span>
+  </div>
+</header>
 
-    <div class="grid" id="top">
-      <div>
-        <p class="eyebrow">// Black Friday 2026</p>
-        <h1>Seu embarque para a <em>Black</em> <b>começa aqui.</b></h1>
-        <p class="lead">Entre no grupo de ofertas da Azul Viagens Sorriso e receba no WhatsApp, em primeira mão, as ofertas de Black Friday em pacotes de viagem.</p>
+<main id="topo">
 
-        <div class="name">
-          <label for="nome">Emita seu cartão de embarque</label>
-          <input id="nome" type="text" maxlength="26" autocomplete="given-name" placeholder="Digite seu nome">
-        </div>
-
-        <a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3 .8.8-3-.2-.3a8.1 8.1 0 0 1 6.8-12.4Zm-3.3 4.1c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.300s1 2.700 1.200 2.900c.1.2 2 3.200 5 4.300 2.400.9 2.900.7 3.400.7.5-.1 1.700-.7 1.900-1.400.2-.6.2-1.200.2-1.300-.1-.2-.3-.2-.6-.4l-1.900-.9c-.3-.1-.5-.2-.7.1l-.9 1.100c-.1.2-.3.2-.6.1-.3-.2-1.200-.4-2.300-1.400-.8-.8-1.400-1.700-1.600-2-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.100c-.2-.5-.4-.5-.6-.5h-.7Z"/></svg>
-          Entrar no grupo de ofertas
-        </a>
-        <p class="note">Gratuito · Direto no seu WhatsApp · Saia quando quiser</p>
+<!-- 2. ABERTURA -->
+<section class="hero">
+  <div class="atmo"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="label reveal">// Portão aberto · Sorriso – MT</span>
+      <h1 class="reveal" style="--d:.08s">Seu próximo <span class="outline">destino</span> já está no <span class="blue">portão.</span></h1>
+      <p class="lede reveal" style="--d:.16s">Orlando com voos diretos, cruzeiros por três países e Lisboa. Escolha o pacote, responda a algumas perguntas rápidas e a nossa equipe cuida do seu embarque.</p>
+      <div class="cta-row reveal" style="--d:.24s">
+        <a class="btn" id="heroCta" href="#pacotes" data-form>Quero embarcar ✈&#xFE0E;</a>
+        <a class="btn ghost" href="#pacotes">Ver pacotes</a>
       </div>
+      <div class="steps3 mono reveal" style="--d:.32s"><span><b>01</b> Escolha o destino</span><span><b>02</b> Faça o check-in</span><span><b>03</b> Fale com a equipe</span></div>
+    </div>
 
-      <div class="stage">
-        <div class="issue"><div class="floaty">
-        <a class="pass js-wa" id="pass" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener" aria-label="Cartão de embarque — entrar no grupo de ofertas">
-          <div class="p-main">
-            <div class="p-head">
-              <div class="lg">Azul <span>viagens</span></div>
-              <div class="bf">BLACK FRIDAY</div>
-            </div>
-            <div class="p-sub">Cartão de embarque · Boarding pass</div>
-            <div class="route">
-              <div><div class="iata">SMT</div><div class="city">Sorriso · MT</div></div>
-              <div class="track">
-                <div class="run"><svg class="plane" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-.8-.7-1.500-1.500-1.500H15L9.500 2H7.500l2.800 8.500H5.500L3.800 8.200H2.200L3.300 12l-1.100 3.800h1.600l1.700-2.300h4.800L7.500 22h2L15 13.500h5.500c.8 0 1.500-.7 1.500-1.500Z"/></svg></div>
-              </div>
-              <div class="to"><div class="iata">BLK</div><div class="city">Ofertas Black</div></div>
-            </div>
-            <div class="fields">
-              <div class="f wide"><small>Passageiro</small><b id="pax" class="caret">PASSAGEIRO VIP</b></div>
-              <div class="f"><small>Voo</small><b>BLACK 26</b></div>
-              <div class="f"><small>Portão</small><b>WHATSAPP</b></div>
-              <div class="f"><small>Classe</small><b>OFERTAS</b></div>
-              <div class="f"><small>Embarque</small><b>AGORA</b></div>
-            </div>
+    <div class="stage" aria-hidden="true">
+      <div class="tilt" id="tilt">
+        <div class="pass">
+          <div class="t-head"><span class="tag">Cartão de embarque</span><span class="who">Azul Viagens Sorriso</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b id="heroDest">MCO</b><span id="heroCity">Orlando</span></div>
           </div>
-          <div class="p-stub">
-            <div><div class="t">Grupo</div><div class="v">VIP</div></div>
+          <div class="fields">
+            <div class="f"><small>Passageiro</small><b>Você</b></div>
+            <div class="f"><small>Embarque</small><b>Imediato</b></div>
+            <div class="f"><small>Portão</small><b>Galeria Cella</b></div>
+            <div class="f"><small>Status</small><b>Última chamada</b></div>
+          </div>
+          <div class="tear"></div>
+          <div class="pass-foot">
             <div class="barcode"></div>
-            <div class="stamp">CONFIRMADO</div>
+            <div class="stamp">Embarque<br>imediato</div>
           </div>
-          <div class="shine"></div>
-        </a>
-        </div></div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PACOTES -->
+<section id="pacotes">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="label reveal">// Painel de partidas</span>
+    <div class="sec-head reveal">
+      <h2>Pacotes com <span class="blue">embarque</span> <span class="outline">marcado</span></h2>
+      <p>Cinco destinos no painel. Escolha o seu, faça o check-in rápido e continue o atendimento pelo WhatsApp com a nossa equipe.</p>
+    </div>
+
+    <div class="tickets">
+
+      <!-- ORLANDO VOO + HOTEL -->
+      <article class="ticket has-video reveal" id="orlando-voo-hotel">
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-orlando.jpg" aria-label="Vista aérea noturna do centro de Orlando"><source src="video/orlando.mp4" type="video/mp4"></video><span>Orlando</span></div>
+        <div class="t-main">
+          <div class="t-head"><span class="tag">Voo + Hotel</span><span class="who">Voo 01 / 05</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b>MCO</b><span>Orlando</span></div>
+          </div>
+          <h3 class="t-title">Orlando — Voo + Hotel</h3>
+          <p class="t-sub">6 noites em Orlando com voos diretos Azul, sem escalas.</p>
+          <div class="fields">
+            <div class="f"><small>Período</small><b>17 a 23 fev 2027</b></div>
+            <div class="f"><small>Noites</small><b>06</b></div>
+            <div class="f"><small>Bagagem</small><b>1 mala despachada</b></div>
+            <div class="f"><small>Ida · 17/02</small><b>VCP 09h45 → MCO 17h00</b></div>
+            <div class="f"><small>Volta · 23/02</small><b>MCO 19h00 → VCP 05h55 (24/02)</b></div>
+            <div class="f"><small>Hotel</small><b>Avanti International Resort</b></div>
+          </div>
+          <details class="more">
+            <summary>O que inclui</summary>
+            <h4>Incluso</h4>
+            <ul>
+              <li>Passagens aéreas Azul, voos diretos Campinas (VCP) ⇄ Orlando (MCO)</li>
+              <li>1 mala despachada por pessoa</li>
+              <li>6 noites no Avanti International Resort, na International Drive — próximo aos parques, restaurantes e atrações</li>
+              <li>Taxas inclusas</li>
+            </ul>
+            <h4>Não incluso</h4>
+            <ul><li>Ingressos dos parques</li></ul>
+            <p class="fine">Total para 2 pessoas: R$ 14.289,80, ou 15x de R$ 952,65. Parcelamento no cartão de crédito ou boleto bancário, sujeito às condições de aprovação. Parcelamento simulado sem juros, sujeito à confirmação. Valores sujeitos a alteração e disponibilidade no momento da reserva.</p>
+          </details>
+        </div>
+        <div class="t-stub">
+          <div class="price"><small>Por pessoa</small><b>R$ 7.144,90</b><span>até 15x de R$ 476,33 por pessoa</span></div>
+          <div class="barcode"></div>
+          <a class="btn" href="#pacotes" data-form="orlando-voo-hotel">Quero este embarque</a>
+          <div class="stamp">Voo direto</div>
+        </div>
+      </article>
+
+      <!-- ORLANDO COM DISNEY -->
+      <article class="ticket has-video reveal" id="orlando-disney">
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-disney.jpg" aria-label="Castelo da Cinderela no Magic Kingdom, Walt Disney World"><source src="video/disney.mp4" type="video/mp4"></video><span>Walt Disney World</span></div>
+        <div class="t-main">
+          <div class="t-head"><span class="tag">Pacote completo · Disney</span><span class="who">Voo 02 / 05</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b>MCO</b><span>Orlando</span></div>
+          </div>
+          <h3 class="t-title">Orlando — Pacote completo com Disney</h3>
+          <p class="t-sub">Voo direto, hotel, 4 dias de Disney e seguro viagem.</p>
+          <div class="fields">
+            <div class="f"><small>Período</small><b>17 a 23 fev 2027</b></div>
+            <div class="f"><small>Noites</small><b>06</b></div>
+            <div class="f"><small>Ingressos</small><b>4 dias Disney</b></div>
+            <div class="f"><small>Ida · 17/02</small><b>VCP 09h45 → MCO 17h00</b></div>
+            <div class="f"><small>Volta · 23/02</small><b>MCO 19h00 → VCP 05h55 (24/02)</b></div>
+            <div class="f"><small>Hotel</small><b>Avanti International Resort</b></div>
+          </div>
+          <details class="more">
+            <summary>O que inclui</summary>
+            <h4>Incluso</h4>
+            <ul>
+              <li>Passagens aéreas Azul, voos diretos Campinas (VCP) ⇄ Orlando (MCO)</li>
+              <li>1 mala despachada por pessoa</li>
+              <li>6 noites no Avanti International Resort, na International Drive — próximo aos parques e atrações</li>
+              <li>4 dias de ingressos para o Walt Disney World Resort, 1 parque por dia, para 2 adultos</li>
+              <li>Seguro viagem Assist Card – Plano 35 Inter, com cobertura de despesas médicas de até US$ 35 mil</li>
+              <li>Taxas inclusas</li>
+            </ul>
+            <p class="fine">Total para 2 pessoas: R$ 23.327,34, ou 15x de R$ 1.555,16. Parcelamento no cartão de crédito ou boleto bancário, sujeito às condições de aprovação. Parcelamento simulado sem juros, sujeito à confirmação. Valores sujeitos a alteração e disponibilidade no momento da reserva.</p>
+          </details>
+        </div>
+        <div class="t-stub">
+          <div class="price"><small>Por pessoa</small><b>R$ 11.663,67</b><span>até 15x de R$ 777,58 por pessoa</span></div>
+          <div class="barcode"></div>
+          <a class="btn" href="#pacotes" data-form="orlando-disney">Quero este embarque</a>
+          <div class="stamp">Disney inclusa</div>
+        </div>
+      </article>
+
+      <!-- CRUZEIRO NATAL -->
+      <article class="ticket has-video reveal" id="cruzeiro-natal">
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-costa-diadema.jpg" aria-label="Vista aérea do navio Costa Diadema navegando"><source src="video/costa-diadema.mp4" type="video/mp4"></video><span>Costa Diadema</span></div>
+        <div class="t-main">
+          <div class="t-head"><span class="tag">Cruzeiro · Natal em alto-mar</span><span class="who">Voo 03 / 05</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b>SSZ</b><span>Santos</span></div>
+          </div>
+          <h3 class="t-title">Cruzeiro Costa Diadema — Natal</h3>
+          <p class="t-sub">7 noites: Brasil, Argentina e Uruguai em uma única viagem.</p>
+          <div class="fields">
+            <div class="f"><small>Embarque</small><b>20 dez 2026</b></div>
+            <div class="f"><small>Retorno</small><b>27 dez 2026</b></div>
+            <div class="f"><small>Noites</small><b>07</b></div>
+            <div class="f"><small>Navio</small><b>Costa Diadema</b></div>
+            <div class="f"><small>Cabine</small><b>Interna Economy</b></div>
+            <div class="f"><small>Porto</small><b>Santos (SP)</b></div>
+          </div>
+          <details class="more">
+            <summary>Roteiro e o que inclui</summary>
+            <h4>Roteiro</h4>
+            <ul>
+              <li>20/12 — Embarque em Santos (SP)</li>
+              <li>21 e 22/12 — Navegação</li>
+              <li>23/12 — Buenos Aires, Argentina</li>
+              <li>24/12 — Montevidéu, Uruguai (véspera de Natal)</li>
+              <li>25/12 — Natal em alto-mar</li>
+              <li>26/12 — Itajaí (SC)</li>
+              <li>27/12 — Desembarque em Santos (SP)</li>
+            </ul>
+            <h4>Incluso</h4>
+            <ul>
+              <li>7 noites de hospedagem no navio</li>
+              <li>Todas as refeições a bordo (café da manhã, almoço, jantar e opções de lanches, conforme os horários dos restaurantes)</li>
+              <li>Acesso às piscinas e áreas de lazer</li>
+              <li>Shows, entretenimento e atividades a bordo, conforme programação</li>
+            </ul>
+            <h4>Opcionais (não inclusos)</h4>
+            <ul><li>Pacote de bebidas</li><li>Pacote de internet (Wi-Fi)</li><li>Passeios e excursões nos destinos visitados</li></ul>
+            <p class="fine">Valores sujeitos a alteração e disponibilidade. Passagens aéreas e deslocamentos até o porto não estão incluídos.</p>
+          </details>
+        </div>
+        <div class="t-stub">
+          <div class="price"><small>Por pessoa</small><b>R$ 5.116,20</b><span>R$ 10.232,40 para 2 pessoas · até 12x de R$ 852,70 sem juros no cartão (valor total para 2 pessoas)</span></div>
+          <div class="barcode"></div>
+          <a class="btn" href="#pacotes" data-form="cruzeiro-natal">Quero este embarque</a>
+          <div class="stamp">3 países</div>
+        </div>
+      </article>
+
+      <!-- LISBOA -->
+      <article class="ticket has-video reveal" id="lisboa">
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-lisboa.jpg" aria-label="Vista aérea de Lisboa: Elevador de Santa Justa, Padrão dos Descobrimentos e Arco da Rua Augusta"><source src="video/lisboa.mp4" type="video/mp4"></video><span>Lisboa</span></div>
+        <div class="t-main">
+          <div class="t-head"><span class="tag">Lisboa · Portugal</span><span class="who">Voo 04 / 05</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b>LIS</b><span>Lisboa</span></div>
+          </div>
+          <h3 class="t-title">Lisboa</h3>
+          <p class="t-sub">6 noites em Lisboa com voos diretos Azul, hotel e seguro viagem.</p>
+          <div class="fields">
+            <div class="f"><small>Período</small><b>04 a 11 mar 2027</b></div>
+            <div class="f"><small>Noites</small><b>06</b></div>
+            <div class="f"><small>Bagagem</small><b>1 mala despachada</b></div>
+            <div class="f"><small>Ida · 04/03</small><b>VCP 18h20 → LIS 07h00 (05/03)</b></div>
+            <div class="f"><small>Volta · 11/03</small><b>LIS 09h20 → VCP 16h40</b></div>
+            <div class="f"><small>Hotel</small><b>Dorma Liberdade</b></div>
+          </div>
+          <details class="more">
+            <summary>O que inclui e opções de hotel</summary>
+            <h4>Incluso</h4>
+            <ul>
+              <li>Passagens aéreas Azul, voos diretos Campinas (VCP) ⇄ Lisboa (LIS)</li>
+              <li>1 mala despachada por pessoa</li>
+              <li>6 noites de hotel, somente quarto (check-in 05/03, check-out 11/03)</li>
+              <li>Seguro viagem</li>
+              <li>Taxa de embarque e encargos</li>
+            </ul>
+            <h4>Opções de hotel · total para 2 adultos</h4>
+            <ul>
+              <li>Dorma Liberdade — R$ 17.179,90</li>
+              <li>Vip Inn Berna — R$ 17.323,01</li>
+              <li>Hotel Epic Sana Marques — R$ 25.798,97</li>
+            </ul>
+            <p class="fine">Valores para 2 adultos em 1 quarto, com os mesmos voos em todas as opções. Dorma Liberdade: Pix à vista R$ 17.179,90, ou 15x de R$ 1.145,33 sem juros no cartão ou no boleto. Aceitamos pagamento com pontos Azul Fidelidade. Não inclui gastos pessoais. Valores e disponibilidade podem mudar até a confirmação da reserva.</p>
+          </details>
+        </div>
+        <div class="t-stub">
+          <div class="price"><small>Por pessoa</small><b>R$ 8.589,95</b><span>R$ 17.179,90 para 2 pessoas · até 15x de R$ 1.145,33 sem juros no cartão ou boleto (valor total para 2 pessoas)</span></div>
+          <div class="barcode"></div>
+          <a class="btn" href="#pacotes" data-form="lisboa">Quero este embarque</a>
+          <div class="stamp">Voo direto</div>
+        </div>
+      </article>
+
+      <!-- CRUZEIRO JANEIRO -->
+      <article class="ticket has-video reveal" id="cruzeiro-janeiro">
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-costa-diadema.jpg" aria-label="Vista aérea do navio Costa Diadema navegando"><source src="video/costa-diadema.mp4" type="video/mp4"></video><span>Costa Diadema</span></div>
+        <div class="t-main">
+          <div class="t-head"><span class="tag">Cruzeiro · 7 noites</span><span class="who">Voo 05 / 05</span></div>
+          <div class="route">
+            <div class="ap"><b>SMT</b><span>Sorriso</span></div>
+            <div class="path"><i class="fly">✈&#xFE0E;</i></div>
+            <div class="ap r"><b>SSZ</b><span>Santos</span></div>
+          </div>
+          <h3 class="t-title">Cruzeiro Costa Diadema — Janeiro</h3>
+          <p class="t-sub">7 noites: Brasil, Argentina e Uruguai em uma única viagem.</p>
+          <div class="fields">
+            <div class="f"><small>Embarque</small><b>17 jan 2027</b></div>
+            <div class="f"><small>Retorno</small><b>24 jan 2027</b></div>
+            <div class="f"><small>Noites</small><b>07</b></div>
+            <div class="f"><small>Navio</small><b>Costa Diadema</b></div>
+            <div class="f"><small>Cabine</small><b>Interna Economy</b></div>
+            <div class="f"><small>Porto</small><b>Santos (SP)</b></div>
+          </div>
+          <details class="more">
+            <summary>Roteiro e o que inclui</summary>
+            <h4>Roteiro</h4>
+            <ul>
+              <li>17/01 — Embarque em Santos (SP)</li>
+              <li>18 e 19/01 — Navegação</li>
+              <li>20/01 — Buenos Aires, Argentina</li>
+              <li>21/01 — Montevidéu, Uruguai</li>
+              <li>22/01 — Navegação</li>
+              <li>23/01 — Itajaí (SC)</li>
+              <li>24/01 — Desembarque em Santos (SP)</li>
+            </ul>
+            <h4>Incluso</h4>
+            <ul>
+              <li>7 noites de hospedagem no navio</li>
+              <li>Todas as refeições a bordo (café da manhã, almoço, jantar e opções de lanches, conforme os horários dos restaurantes)</li>
+              <li>Acesso às piscinas e áreas de lazer</li>
+              <li>Shows, entretenimento e atividades a bordo, conforme programação</li>
+            </ul>
+            <h4>Opcionais (não inclusos)</h4>
+            <ul><li>Pacote de bebidas</li><li>Pacote de internet (Wi-Fi)</li><li>Passeios e excursões nos destinos visitados</li></ul>
+            <p class="fine">Valores sujeitos a alteração e disponibilidade. Passagens aéreas e deslocamentos até o porto não estão incluídos.</p>
+          </details>
+        </div>
+        <div class="t-stub">
+          <div class="price"><small>Por pessoa</small><b>R$ 4.317,40</b><span>R$ 8.634,80 para 2 pessoas · até 12x de R$ 719,57 sem juros no cartão (valor total para 2 pessoas)</span></div>
+          <div class="barcode"></div>
+          <a class="btn" href="#pacotes" data-form="cruzeiro-janeiro">Quero este embarque</a>
+          <div class="stamp">3 países</div>
+        </div>
+      </article>
+
+
+    </div>
+
+    <p class="disclaimer reveal">Valores sujeitos a alteração e disponibilidade no momento da reserva.</p>
+
+    <div class="cards">
+      <div class="card reveal"><span class="n">01</span><h3>Escolha o destino</h3><p>Toque em “Quero este embarque” no bilhete que combina com a sua viagem.</p></div>
+      <div class="card reveal" style="--d:.1s"><span class="n">02</span><h3>Faça o check-in</h3><p>Algumas perguntas rápidas, uma por tela, para a equipe já receber o que precisa.</p></div>
+      <div class="card reveal" style="--d:.2s"><span class="n">03</span><h3>Fale com a equipe</h3><p>Continue pelo WhatsApp e confirme disponibilidade e condições direto com a agência.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CONHEÇA A NOSSA AGÊNCIA -->
+<section id="agencia" class="reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Conheça a <span class="blue">nossa agência</span></h2>
+      <p>Estamos na Galeria Cella, em Sorriso – MT. Passe para um café e planeje sua viagem com a gente.</p>
+    </div>
+    <div class="gallery">
+      <figure class="ph g1"><img src="img/fachada-1.jpg" alt="Fachada da Azul Viagens Sorriso na Galeria Cella, em Sorriso – MT" loading="lazy" style="object-position:76% center" onerror="this.parentNode.classList.add('noimg')"><figcaption>Fachada</figcaption></figure>
+      <figure class="ph g3"><img src="img/fachada-2.jpg" alt="Entrada da Azul Viagens Sorriso vista do corredor da Galeria Cella" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><figcaption>Galeria Cella</figcaption></figure>
+      <figure class="ph g4"><img src="img/interior-2.jpg" alt="Sala de espera da Azul Viagens Sorriso" loading="lazy" onerror="this.parentNode.classList.add('noimg')"><figcaption>Sala de espera</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5. NOSSA EQUIPE (preenchida a partir de CONFIG.EQUIPE; fica oculta enquanto a lista estiver vazia) -->
+<section id="equipe" hidden>
+  <div class="wrap">
+    <span class="label reveal">// Tripulação</span>
+    <div class="sec-head reveal">
+      <h2>Quem cuida da <span class="blue">sua viagem</span></h2>
+      <p id="equipeFrase"></p>
+    </div>
+    <div id="equipeGrupo"></div>
+    <div class="team" id="equipeGrid"></div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram" class="ig">
+  <div class="glow"></div>
+  <div class="wrap ig-grid">
+    <div>
+      <span class="label reveal">// Diário de bordo</span>
+      <h2 class="reveal" style="--d:.08s">Acompanhe cada <span class="blue">embarque</span> no <span class="outline">Instagram</span></h2>
+      <p class="lede reveal" style="--d:.16s">Novos destinos, saídas confirmadas e os bastidores da agência. Siga a Azul Viagens Sorriso e receba a próxima chamada antes de todo mundo.</p>
+      <div class="reveal" style="--d:.24s">
+        <span class="pill handle"><i class="dot"></i>@azulviagenssorriso</span><br>
+        <a class="btn" href="https://www.instagram.com/azulviagenssorriso/" target="_blank" rel="noopener">Seguir no Instagram</a>
+        <span class="mono ig-hint">Use as setas para passar · toque para abrir no Instagram</span>
+      </div>
+    </div>
+
+    <div class="story-box reveal">
+      <div class="story" id="story" aria-roledescription="carrossel" aria-label="Publicações do Instagram da Azul Viagens Sorriso">
+        <div class="segs" aria-hidden="true"><i class="on"><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+        <a class="slide on" href="https://www.instagram.com/p/Dfug_3vMysB/" target="_blank" rel="noopener" aria-label="Abrir publicação 1 no Instagram"><img src="img/insta-1.jpg" alt="Arte de 2 anos da Azul Viagens Sorriso"><span class="s-open">Ver no Instagram ↗</span></a>
+        <a class="slide" href="https://www.instagram.com/p/DfSGPxBRHXb/" target="_blank" rel="noopener" aria-label="Abrir publicação 2 no Instagram"><img src="img/insta-2.jpg" alt="Publicação de anúncio da Azul Friday no aeroporto" loading="lazy"><span class="s-open">Ver no Instagram ↗</span></a>
+        <a class="slide" href="https://www.instagram.com/p/DezxC-wsdd9/" target="_blank" rel="noopener" aria-label="Abrir publicação 3 no Instagram"><img src="img/insta-3.jpg" alt="Clientes da Azul Viagens Sorriso em dunas à beira de uma lagoa" loading="lazy"><span class="s-open">Ver no Instagram ↗</span></a>
+        <a class="slide wide" href="https://www.instagram.com/p/Ddt03_zEWAu/" target="_blank" rel="noopener" aria-label="Abrir publicação 4 no Instagram"><img src="img/insta-4.jpg" alt="Clientes da Azul Viagens Sorriso caminhando em uma praia com coqueiros" loading="lazy"><span class="s-open">Ver no Instagram ↗</span></a>
+      </div>
+      <div class="arrows" id="stArrows">
+        <button type="button" class="arrow" id="stPrev" aria-label="Publicação anterior">←</button>
+        <span class="mono" id="stCount" aria-live="polite">01 / 04</span>
+        <button type="button" class="arrow" id="stNext" aria-label="Próxima publicação">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CHAMADA FINAL -->
+<section class="final">
+  <div class="atmo"></div>
+  <div class="wrap">
+    <span class="label reveal">// Última chamada</span>
+    <h2 class="reveal" style="--d:.08s">Última chamada para o seu <span class="outline">próximo</span> <span class="blue">embarque.</span></h2>
+    <p class="reveal" style="--d:.16s">Faça o check-in em menos de dois minutos e continue o atendimento pelo WhatsApp com a nossa equipe.</p>
+    <a class="btn reveal" style="--d:.24s" href="#pacotes" data-form>Quero embarcar ✈&#xFE0E;</a>
+  </div>
+</section>
+
+</main>
+
+<!-- 7. RODAPÉ -->
+<footer id="contato">
+  <div class="wrap">
+    <span class="mono">Azul Viagens Sorriso</span>
+    <div id="footAddr">Galeria Cella · Avenida Blumenau, 2131 · Bela Vista · Sorriso – MT</div>
+    <div class="links" id="footLinks"></div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#pacotes" data-form>Quero embarcar ✈&#xFE0E;</a></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Foto ampliada" aria-hidden="true"><img alt=""></div>
+
+<!-- FORMULÁRIO DE PRÉ-QUALIFICAÇÃO -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="fTitle">
+    <div class="f-top">
+      <div class="f-row"><span class="mono f-step" id="fStep">Check-in</span><button class="f-close" type="button" id="fClose" aria-label="Fechar formulário">✕</button></div>
+      <div class="f-pkg" id="fPkg"></div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fBar"><i></i></div>
+    </div>
+    <form class="f-body" id="fBody" novalidate></form>
+    <div class="f-nav" id="fNav">
+      <button class="btn ghost" type="button" id="fBack">Voltar</button>
+      <button class="btn" type="button" id="fNext">Avançar</button>
     </div>
   </div>
 </div>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Por que <b>embarcar</b><br>no grupo?</h2>
-      <p>Um canal direto com a agência para você não perder nenhuma oportunidade da Black.</p>
-    </div>
-    <div class="perks">
-      <div class="perk reveal"><span class="n">01</span><h3>Ofertas em primeira mão</h3><p>As promoções de Black Friday chegam primeiro para quem está no grupo.</p></div>
-      <div class="perk reveal"><span class="n">02</span><h3>Pacotes de viagem</h3><p>Ofertas em pacotes para o seu próximo destino, selecionadas pela nossa equipe.</p></div>
-      <div class="perk reveal"><span class="n">03</span><h3>Atendimento de perto</h3><p>Gostou de uma oferta? Fale com a nossa equipe de Sorriso e feche sua viagem.</p></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Conheça a <b>nossa agência</b></h2>
-      <p>Estamos na Galeria Cella, em Sorriso – MT. Passe para um café e planeje sua viagem com a gente.</p>
-    </div>
-    <div class="gallery reveal">
-      <figure class="g1"><img src="img/fachada-1.jpg" alt="Fachada da Azul Viagens Sorriso na Galeria Cella" loading="lazy"><figcaption>Fachada</figcaption></figure>
-      <figure class="g2"><img src="img/interior-1.jpg" alt="Interior da agência Azul Viagens Sorriso" loading="lazy"><figcaption>Recepção</figcaption></figure>
-      <figure class="g3"><img src="img/fachada-2.jpg" alt="Vista lateral da fachada da agência" loading="lazy"><figcaption>Galeria Cella</figcaption></figure>
-      <figure class="g4"><img src="img/interior-2.jpg" alt="Sala de espera da Azul Viagens Sorriso" loading="lazy"><figcaption>Sala de espera</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap reveal">
-    <p class="eyebrow">// Última chamada</p>
-    <h2>Embarque imediato<br>para as <b>ofertas da Black.</b></h2>
-    <p>Seu lugar no grupo está reservado. É só entrar.</p>
-    <a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">Quero entrar no grupo →</a>
-  </div>
-</section>
-
-<footer><div class="wrap">Azul Viagens Sorriso · Galeria Cella · Sorriso – MT</div></footer>
-
-<div class="sticky"><a class="cta js-wa" href="https://chat.whatsapp.com/DVy3uSYgx4qCdHH7Z9QFBm" target="_blank" rel="noopener">Entrar no grupo de ofertas</a></div>
-<div class="lb" id="lb"><img alt=""></div>
-
 <script>
+/* =====================================================================
+   CONFIGURAÇÃO — edite somente este bloco
+   ===================================================================== */
+var CONFIG = {
+  // WhatsApp da agência: DDI + DDD + número, só dígitos. Ex.: '5566999999999'
+  WHATSAPP: '556692209985',
+  // URL que recebe os leads por POST (JSON). Padrão: banco interno do site
+  // (api/lead.php), consultado no painel /admin.
+  LEAD_ENDPOINT: '', // GitHub Pages não roda PHP; para gravar leads, publicar em hospedagem com PHP e voltar para 'api/lead.php'
+  ENDERECO: 'Galeria Cella · Avenida Blumenau, 2131 · Bela Vista · Sorriso – MT',
+  TELEFONE: '(66) 9220-9985',                // como deve aparecer no rodapé. Ex.: '(66) 99999-9999'
+  INSTAGRAM: 'https://www.instagram.com/azulviagenssorriso/',               // URL completa do perfil
+  // Equipe: uma linha por pessoa. A seção só aparece quando houver alguém aqui.
+  // { foto: 'img/equipe-nome.jpg', nome: 'Nome', cargo: 'Cargo' }
+  EQUIPE: [
+    { foto: 'img/equipe-1.jpg', nome: '', cargo: '' },
+    { foto: 'img/equipe-2.jpg', nome: '', cargo: '' },
+    { foto: 'img/equipe-3.jpg', nome: '', cargo: '' },
+    { foto: 'img/equipe-4.jpg', nome: '', cargo: '' }
+  ],
+  EQUIPE_FRASE: 'Gente de Sorriso que acompanha você do primeiro orçamento até a volta para casa.',
+  EQUIPE_FOTO_GRUPO: ''         // opcional. Ex.: 'img/equipe.jpg'
+};
+
+var PACOTES = [
+  { id:'orlando-voo-hotel', nome:'Orlando – Voo + Hotel', tipo:'orlando', ref:'15x de R$ 476,33 por pessoa', tag:'17 a 23 fev 2027' },
+  { id:'orlando-disney', nome:'Orlando – Pacote completo com Disney', tipo:'orlando', ref:'15x de R$ 777,58 por pessoa', tag:'17 a 23 fev 2027' },
+  { id:'cruzeiro-natal', nome:'Cruzeiro Costa Diadema – Natal', tipo:'cruzeiro', ref:'12x de R$ 852,70 para duas pessoas', tag:'20 a 27 dez 2026', datas:'20/12 e 27/12/2026' },
+  { id:'lisboa', nome:'Lisboa – Portugal', tipo:'lisboa', ref:'15x de R$ 1.145,33 para duas pessoas', tag:'04 a 11 mar 2027' },
+  { id:'cruzeiro-janeiro', nome:'Cruzeiro Costa Diadema – Janeiro', tipo:'cruzeiro', ref:'12x de R$ 719,57 para duas pessoas', tag:'17 a 24 jan 2027', datas:'17/01 e 24/01/2027' }
+];
+
 (function(){
-if(!('IntersectionObserver' in window))return;
-// faixa
-const tk=document.getElementById('tk');
-tk.innerHTML=('<span>Black Friday</span><span>✈</span><span>Grupo de ofertas</span><span>✈</span><span>Azul Viagens Sorriso</span><span>✈</span>').repeat(12);
+'use strict';
+var $ = function(s,c){return (c||document).querySelector(s)};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function store(k,v){try{ if(v===undefined) return JSON.parse(localStorage.getItem(k)||'null'); localStorage.setItem(k,JSON.stringify(v)); }catch(e){return null}}
 
-// nome no cartão
-const nome=document.getElementById('nome'),pax=document.getElementById('pax');
-try{const s=localStorage.getItem('pax');if(s){nome.value=s;pax.textContent=s.toUpperCase()}}catch(e){}
-nome.addEventListener('input',()=>{
-  const v=nome.value.trim();
-  pax.textContent=v?v.toUpperCase():'PASSAGEIRO VIP';
-  try{localStorage.setItem('pax',v)}catch(e){}
-});
+/* ---------- rodapé / equipe ---------- */
+try{
+  $('#footAddr').textContent = CONFIG.ENDERECO;
+  var links = [];
+  if(CONFIG.WHATSAPP) links.push('<a href="https://wa.me/'+CONFIG.WHATSAPP+'" target="_blank" rel="noopener">WhatsApp'+(CONFIG.TELEFONE?' '+esc(CONFIG.TELEFONE):'')+'</a>');
+  else if(CONFIG.TELEFONE) links.push('<span>'+esc(CONFIG.TELEFONE)+'</span>');
+  if(CONFIG.INSTAGRAM) links.push('<a href="'+esc(CONFIG.INSTAGRAM)+'" target="_blank" rel="noopener">Instagram @azulviagenssorriso</a>');
+  $('#footLinks').innerHTML = links.join('');
 
-// inclinação 3D do cartão
-const pass=document.getElementById('pass');
-if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  const st=pass.closest('.stage');
-  st.addEventListener('pointermove',e=>{
-    const r=pass.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    pass.style.setProperty('--ry',(x*12)+'deg');pass.style.setProperty('--rx',(-y*10)+'deg');
+  if(CONFIG.EQUIPE && CONFIG.EQUIPE.length){
+    var grid = $('#equipeGrid');
+    $('#equipeFrase').textContent = CONFIG.EQUIPE_FRASE;
+    grid.innerHTML = CONFIG.EQUIPE.map(function(p,i){
+      var alt = p.nome ? p.nome+(p.cargo?', '+p.cargo:'')+' — Azul Viagens Sorriso' : 'Integrante da equipe — Azul Viagens Sorriso';
+      return '<figure class="member reveal'+(p.nome?'':' semnome')+'" style="--d:'+(i%4*.08)+'s"><img src="'+esc(p.foto)+'" alt="'+esc(alt)+'" loading="lazy">'+
+        (p.nome?'<figcaption><b>'+esc(p.nome)+'</b>'+(p.cargo?'<span>'+esc(p.cargo)+'</span>':'')+'</figcaption>':'')+'</figure>';
+    }).join('');
+    // foto que ainda não está na pasta img/ não deixa card vazio
+    $$('img',grid).forEach(function(im){im.addEventListener('error',function(){
+      var f=im.parentNode; if(f.parentNode) f.parentNode.removeChild(f);
+      if(!$('.member',grid)) $('#equipe').hidden=true;
+    })});
+    if(CONFIG.EQUIPE_FOTO_GRUPO) $('#equipeGrupo').innerHTML = '<div class="team-photo reveal"><img src="'+esc(CONFIG.EQUIPE_FOTO_GRUPO)+'" alt="Equipe da Azul Viagens Sorriso" loading="lazy"></div>';
+    $('#equipe').hidden = false;
+  }
+}catch(e){}
+
+/* ---------- entrada na rolagem ---------- */
+var revs = $$('.reveal');
+if('IntersectionObserver' in window && !reduce){
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+  revs.forEach(function(el){io.observe(el)});
+  setTimeout(function(){revs.forEach(function(el){var r=el.getBoundingClientRect(); if(r.top<innerHeight) el.classList.add('in')})},1500);
+} else revs.forEach(function(el){el.classList.add('in')});
+
+/* ---------- bilhete da abertura ---------- */
+var dests=[['MCO','Orlando'],['SSZ','Santos'],['LIS','Lisboa']], di=0, hd=$('#heroDest'), hc=$('#heroCity');
+if(!reduce) setInterval(function(){
+  hd.style.opacity=0;
+  setTimeout(function(){di=(di+1)%dests.length;hd.textContent=dests[di][0];hc.textContent=dests[di][1];hd.style.opacity=1},350);
+},3200);
+var tilt=$('#tilt');
+if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  var hero=$('.hero');
+  hero.addEventListener('mousemove',function(e){
+    var r=tilt.getBoundingClientRect(), x=(e.clientX-(r.left+r.width/2))/r.width, y=(e.clientY-(r.top+r.height/2))/r.height;
+    tilt.style.setProperty('--ry',Math.max(-1,Math.min(1,x))*8+'deg');
+    tilt.style.setProperty('--rx',Math.max(-1,Math.min(1,y))*-8+'deg');
   });
-  st.addEventListener('pointerleave',()=>{pass.style.setProperty('--ry','0deg');pass.style.setProperty('--rx','0deg')});
+  hero.addEventListener('mouseleave',function(){tilt.style.setProperty('--ry','0deg');tilt.style.setProperty('--rx','0deg')});
 }
 
-// aparecer ao rolar
-document.documentElement.classList.add('js');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*90)+'ms';io.observe(el)});
+/* ---------- botão fixo ---------- */
+var sticky=$('#sticky'), heroCta=$('#heroCta');
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    var e=es[0]; sticky.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top<0);
+  }).observe(heroCta);
+}
 
-// cta fixo só depois do botão principal sair da tela
-const stk=document.querySelector('.sticky');stk.style.transition='opacity .3s,transform .3s';
-new IntersectionObserver(([e])=>{stk.style.opacity=e.isIntersecting?0:1;stk.style.pointerEvents=e.isIntersecting?'none':'auto';stk.style.transform=e.isIntersecting?'translateY(20px)':'none'}).observe(document.querySelector('.hero .cta'));
+/* ---------- galeria ---------- */
+var lb=$('#lightbox'), lbImg=$('img',lb);
+function lbClose(){lb.classList.remove('on');lb.setAttribute('aria-hidden','true')}
+$$('.ph').forEach(function(f){
+  f.addEventListener('click',function(){
+    if(f.classList.contains('noimg')) return;
+    var im=$('img',f); lbImg.src=im.currentSrc||im.src; lbImg.alt=im.alt;
+    lb.classList.add('on'); lb.setAttribute('aria-hidden','false');
+  });
+});
+$$('.tickets').forEach(function(t){t.addEventListener('click',function(e){
+  var im=e.target; if(!im.matches||!im.matches('.t-photo img')) return;
+  lbImg.src=im.currentSrc||im.src; lbImg.alt=im.alt; lb.classList.add('on'); lb.setAttribute('aria-hidden','false');
+})});
+lb.addEventListener('click',lbClose);
 
-// galeria
-const lb=document.getElementById('lb');
-document.querySelectorAll('.gallery figure').forEach(f=>f.addEventListener('click',()=>{lb.firstElementChild.src=f.querySelector('img').src;lb.classList.add('on')}));
-lb.addEventListener('click',()=>lb.classList.remove('on'));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+/* ---------- vídeos dos destinos: tocam só enquanto aparecem na tela ---------- */
+var vids=$$('.t-video video');
+if(vids.length && !reduce && 'IntersectionObserver' in window){
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){ v.muted=true; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+    else v.pause();
+  })},{threshold:.35});
+  vids.forEach(function(v){vio.observe(v)});
+}
+
+/* ---------- Instagram: publicações dentro do mockup ---------- */
+var story=$('#story');
+if(story){
+  var sl=$$('.slide',story), sg=$$('.segs i',story), cur=0;
+  var go=function(n){
+    cur=(n+sl.length)%sl.length;
+    sl.forEach(function(s,i){s.classList.toggle('on',i===cur)});
+    sg.forEach(function(s,i){s.classList.toggle('on',i===cur);s.classList.toggle('full',i<cur)});
+    $('#stCount').textContent=('0'+(cur+1)).slice(-2)+' / '+('0'+sl.length).slice(-2);
+  };
+  $('#stNext').addEventListener('click',function(){go(cur+1)});
+  $('#stPrev').addEventListener('click',function(){go(cur-1)});
+}
+
+/* =====================================================================
+   FORMULÁRIO DE PRÉ-QUALIFICAÇÃO
+   ===================================================================== */
+var SIM_NAO_AND = [['sim','Sim'],['nao','Não'],['andamento','Estou providenciando']];
+var Q = {
+  pacote:{type:'choice',title:'Qual pacote deseja conhecer?',label:'Pacote',
+    opts:PACOTES.map(function(p){return [p.id,p.nome,p.tag]})},
+  pessoas:{type:'number',title:'Quantas pessoas participarão da viagem?',label:'Quantidade de passageiros',min:1,max:20,def:2},
+  passaporte:{type:'choice',title:'Possui passaporte válido?',label:'Passaporte válido',opts:SIM_NAO_AND},
+  visto:{type:'choice',title:'Possui visto americano válido?',label:'Visto americano válido',opts:SIM_NAO_AND},
+  adultos:{type:'number',title:'Quantos passageiros são adultos?',label:'Adultos',min:1,max:20,def:2},
+  criancas:{type:'kids',title:'Viajará com crianças?',label:'Crianças',opts:[['sim','Sim'],['nao','Não']]},
+  porto:{type:'choice',title:'Todos conseguem se deslocar até o porto de Santos?',label:'Deslocamento até o porto de Santos',
+    hint:'Passagens aéreas e deslocamentos até o porto não estão incluídos.',
+    opts:[['sim','Sim'],['confirmar','Preciso confirmar'],['nao','Não']]},
+  datas:{type:'choice',title:'',label:'Disponibilidade nas datas',opts:[['sim','Sim'],['confirmar','Preciso confirmar'],['nao','Não']]},
+  flex:{type:'choice',title:'Possui flexibilidade nas datas da viagem?',label:'Flexibilidade nas datas',opts:[['sim','Sim'],['nao','Não']]},
+  previsao:{type:'text',title:'Qual sua previsão de investimento para essa viagem?',label:'Previsão de investimento',
+    hint:'Um valor aproximado já ajuda a equipe a montar o orçamento.',ph:'Ex.: R$ 20.000 para o casal',field:'Previsão de investimento'},
+  interesse:{type:'choice',title:'Qual é o seu nível de interesse?',label:'Prazo para fechamento',opts:[
+    ['imediato','Quero fechar o quanto antes.'],['7dias','Pretendo reservar nos próximos 7 dias.'],
+    ['30dias','Pretendo fechar nos próximos 30 dias.'],['pesquisando','Estou pesquisando opções.']]},
+  pagamento:{type:'choice',title:'Como pretende realizar o pagamento?',label:'Forma de pagamento',opts:[
+    ['pix','Pix / à vista.'],['cartao','Cartão de crédito.'],['boleto','Boleto bancário, quando disponível.'],['condicoes','Quero conhecer as condições.']]},
+  investimento:{type:'choice',title:'O investimento apresentado está dentro do seu planejamento?',label:'Capacidade de investimento',ref:true,opts:[
+    ['sim','Sim, está dentro do meu orçamento.'],['parcelar','Sim, desde que consiga parcelar.'],
+    ['mais','Posso investir um pouco mais, dependendo das condições.'],['avaliar','Preciso avaliar.']]},
+  cidade:{type:'text',title:'Qual sua cidade de residência?',label:'Cidade de residência',ph:'Ex.: Sorriso – MT',field:'Cidade',ac:'address-level2'},
+  contato:{type:'contact',title:'Para quem emitimos o atendimento?',label:'Contato',hint:'Nossa equipe fala com você por este WhatsApp.'}
+};
+var ESPECIFICAS = ['passaporte','visto','adultos','criancas','porto','datas','flex','previsao'];
+
+var modal=$('#modal'), body=$('#fBody'), bNext=$('#fNext'), bBack=$('#fBack'), nav=$('#fNav');
+var ans={}, idx=0, locked=false, lastFocus=null, finished=false;
+var urlPkg=null;
+try{ var qp=new URLSearchParams(location.search).get('pacote'); if(qp && pkg(qp)) urlPkg=qp; }catch(e){}
+
+function pkg(id){for(var i=0;i<PACOTES.length;i++) if(PACOTES[i].id===id) return PACOTES[i]; return null}
+function steps(){
+  var p=pkg(ans.pacote), s=[];
+  if(!locked) s.push('pacote');
+  s.push('pessoas');
+  if(p){
+    if(p.tipo==='orlando') s.push('passaporte','visto','adultos','criancas');
+    if(p.tipo==='cruzeiro') s.push('porto','datas');
+    if(p.tipo==='lisboa') s.push('passaporte','flex','previsao');
+  } else s.push('_a','_b');
+  s.push('interesse','pagamento');
+  if(!p || p.ref) s.push('investimento');
+  s.push('cidade','contato');
+  return s;
+}
+function optLabel(key,v){var o=Q[key].opts; for(var i=0;i<o.length;i++) if(o[i][0]===v) return o[i][1]; return v}
+
+function openForm(id){
+  lastFocus=document.activeElement;
+  var draft=store('avs_form_rascunho');
+  id = id || urlPkg;
+  ans = (draft && (!id || draft.pacote===id)) ? draft : {};
+  locked=!!id; if(id) ans.pacote=id;
+  idx=0; finished=false;
+  modal.classList.add('on'); modal.setAttribute('aria-hidden','false');
+  document.documentElement.style.overflow='hidden';
+  render(true);
+}
+function closeForm(){
+  modal.classList.remove('on'); modal.setAttribute('aria-hidden','true');
+  document.documentElement.style.overflow='';
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$$('[data-form]').forEach(function(a){
+  a.addEventListener('click',function(e){e.preventDefault();openForm(a.getAttribute('data-form')||null)});
+});
+$('#fClose').addEventListener('click',closeForm);
+modal.addEventListener('click',function(e){if(e.target===modal) closeForm()});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape') return;
+  if(lb.classList.contains('on')) lbClose(); else if(modal.classList.contains('on')) closeForm();
+});
+
+function render(focus){
+  var st=steps(), key=st[idx], q=Q[key], p=pkg(ans.pacote), h='';
+  var total=st.length;
+  $('#fStep').textContent='Etapa '+('0'+(idx+1)).slice(-2)+' / '+('0'+total).slice(-2);
+  $('#fPkg').textContent=p?p.nome:'Check-in Azul Viagens Sorriso';
+  var pct=Math.round(idx/total*100);
+  $('#fBar i').style.transform='scaleX('+(idx/total)+')'; $('#fBar').setAttribute('aria-valuenow',pct);
+  bBack.style.visibility=idx===0?'hidden':'visible';
+  bNext.textContent=key==='contato'?'Concluir check-in':'Avançar';
+  nav.style.display='';
+
+  var title=q.title;
+  if(key==='datas') title='Possuem disponibilidade para viajar entre '+p.datas+'?';
+  h+='<h3 id="fTitle" tabindex="-1">'+esc(title)+' <span class="req" title="Obrigatório" aria-label="obrigatório">*</span></h3>';
+  if(q.hint) h+='<p class="f-hint">'+esc(q.hint)+'</p>';
+  if(q.ref && p && p.ref) h+='<div class="f-ref"><small>Referência de investimento</small><b>'+esc(p.ref)+'</b></div>';
+
+  if(q.type==='choice'||q.type==='kids'){
+    h+='<div class="opts" role="radiogroup" aria-labelledby="fTitle">';
+    q.opts.forEach(function(o){
+      h+='<button type="button" class="opt" role="radio" data-v="'+o[0]+'" aria-checked="'+(ans[key]===o[0])+'"><span>'+esc(o[1])+(o[2]?'<small>'+esc(o[2])+'</small>':'')+'</span></button>';
+    });
+    h+='</div>';
+    if(q.type==='kids') h+='<div class="field" id="kidsField"'+(ans.criancas==='sim'?'':' hidden')+'><label for="kidsAges">Idades das crianças *</label><input id="kidsAges" type="text" inputmode="text" placeholder="Ex.: 4 e 9 anos" value="'+esc(ans.criancasIdades||'')+'"></div>';
+  }
+  if(q.type==='number'){
+    var v=ans[key]||q.def; if(key==='adultos' && ans.pessoas && !ans.adultos) v=Math.min(q.def,ans.pessoas);
+    ans[key]=v;
+    h+='<div class="stepper"><button type="button" data-d="-1" aria-label="Diminuir">−</button><output id="numOut" aria-live="polite">'+v+'</output><button type="button" data-d="1" aria-label="Aumentar">+</button></div>';
+  }
+  if(q.type==='text'){
+    h+='<div class="field"><label for="txt">'+esc(q.field)+' *</label><input id="txt" type="text" required autocomplete="'+(q.ac||'off')+'" placeholder="'+esc(q.ph||'')+'" value="'+esc(ans[key]||'')+'"></div>';
+  }
+  if(q.type==='contact'){
+    h+='<div class="field"><label for="nome">Nome *</label><input id="nome" type="text" required autocomplete="name" placeholder="Seu nome completo" value="'+esc(ans.nome||'')+'"></div>'+
+       '<div class="field"><label for="fone">WhatsApp *</label><input id="fone" type="tel" required inputmode="tel" autocomplete="tel-national" placeholder="(66) 99999-9999" value="'+esc(ans.whatsapp||'')+'"></div>'+
+       '<p class="f-note">Seus dados são usados somente pela Azul Viagens Sorriso para o atendimento desta viagem.</p>';
+  }
+  h+='<p class="f-err" id="fErr" role="alert"></p>';
+  body.innerHTML=h; body.scrollTop=0;
+
+  $$('.opt',body).forEach(function(b){
+    b.addEventListener('click',function(){
+      ans[key]=b.getAttribute('data-v');
+      $$('.opt',body).forEach(function(x){x.setAttribute('aria-checked',x===b)});
+      if(key==='pacote'){ $('#fPkg').textContent=pkg(ans.pacote).nome; }
+      if(q.type==='kids'){
+        var kf=$('#kidsField'); kf.hidden=ans.criancas!=='sim';
+        if(ans.criancas==='sim'){ $('#kidsAges').focus(); return; }
+      }
+      save(); setTimeout(next,220);
+    });
+  });
+  $$('.stepper button',body).forEach(function(b){
+    b.addEventListener('click',function(){
+      var mx=q.max; if(key==='adultos' && ans.pessoas) mx=ans.pessoas;
+      ans[key]=Math.max(q.min,Math.min(mx,ans[key]+ +b.getAttribute('data-d')));
+      $('#numOut').textContent=ans[key]; save();
+    });
+  });
+  var fone=$('#fone',body);
+  if(fone) fone.addEventListener('input',function(){
+    var d=fone.value.replace(/\D/g,'').slice(0,11), o=d;
+    if(d.length>2) o='('+d.slice(0,2)+') '+d.slice(2);
+    if(d.length>6) o='('+d.slice(0,2)+') '+d.slice(2,d.length-4)+'-'+d.slice(-4);
+    fone.value=o;
+  });
+  if(focus!==false){ var t=$('#txt',body)||$('#nome',body)||$('#fTitle',body); if(t) setTimeout(function(){t.focus({preventScroll:true})},60); }
+}
+body.addEventListener('submit',function(e){e.preventDefault();next()});
+body.addEventListener('keydown',function(e){ if(e.key==='Enter' && e.target.tagName==='INPUT'){e.preventDefault();next()} });
+
+function save(){store('avs_form_rascunho',ans)}
+function err(m,el){$('#fErr').textContent=m; if(el) el.focus(); return false}
+function validate(){
+  var key=steps()[idx], q=Q[key];
+  if(q.type==='choice' && !ans[key]) return err('Escolha uma opção para continuar.');
+  if(q.type==='kids'){
+    if(!ans.criancas) return err('Escolha uma opção para continuar.');
+    if(ans.criancas==='sim'){
+      var a=$('#kidsAges').value.trim(); if(!a) return err('Informe as idades das crianças.',$('#kidsAges'));
+      ans.criancasIdades=a;
+    } else delete ans.criancasIdades;
+  }
+  if(q.type==='number'){
+    if(key==='adultos' && ans.pessoas && ans.adultos>ans.pessoas) ans.adultos=ans.pessoas;
+  }
+  if(q.type==='text'){
+    var v=$('#txt').value.trim(); if(v.length<2) return err('Preencha este campo para continuar.',$('#txt'));
+    ans[key]=v;
+  }
+  if(q.type==='contact'){
+    var n=$('#nome').value.trim(), f=$('#fone').value.replace(/\D/g,'');
+    ans.nome=n; ans.whatsapp=$('#fone').value;
+    if(n.length<3) return err('Informe seu nome.',$('#nome'));
+    if(f.length<10 || f.length>11) return err('Informe um WhatsApp válido com DDD.',$('#fone'));
+  }
+  return true;
+}
+function next(){
+  if(finished || !validate()) return;
+  save();
+  var st=steps();
+  if(idx>=st.length-1) return finish();
+  idx++; render();
+}
+bNext.addEventListener('click',next);
+bBack.addEventListener('click',function(){ if(idx>0){idx--;render()} });
+
+/* ---------- classificação ---------- */
+function classify(a,p){
+  var logo = a.interesse==='imediato'||a.interesse==='7dias';
+  var capaz = a.investimento!=='avaliar';
+  var incompativel = a.datas==='nao'||a.porto==='nao';
+  var pendencia = a.passaporte==='nao'||a.visto==='nao'||a.datas==='confirmar'||a.porto==='confirmar';
+  if(a.interesse==='pesquisando'||incompativel) return 'FRIO';
+  if(logo && capaz && !pendencia) return 'QUENTE';
+  return 'MORNO';
+}
+
+/* ---------- envio ---------- */
+function utm(){var o={};try{new URLSearchParams(location.search).forEach(function(v,k){if(/^utm_|^fbclid$|^gclid$/.test(k))o[k]=v})}catch(e){}return o}
+function post(lead){
+  if(!CONFIG.LEAD_ENDPOINT || !window.fetch) return Promise.reject(new Error('sem endpoint'));
+  // text/plain evita preflight de CORS e funciona com Google Apps Script e a maioria dos webhooks
+  var a=document.createElement('a'); a.href=CONFIG.LEAD_ENDPOINT;
+  var externo=a.origin!==location.origin;
+  return fetch(CONFIG.LEAD_ENDPOINT,{method:'POST',mode:externo?'no-cors':'same-origin',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(lead)})
+    .then(function(r){
+      // no mesmo domínio dá para confirmar a gravação; falha temporária mantém o lead na fila de reenvio
+      if(!externo && (r.status>=500 || r.status===429 || r.status===404)) throw new Error('HTTP '+r.status);
+      return r;
+    });
+}
+function flush(){
+  var pend=store('avs_leads_pendentes')||[]; if(!pend.length || !CONFIG.LEAD_ENDPOINT) return;
+  var rest=[], chain=Promise.resolve();
+  pend.forEach(function(l){chain=chain.then(function(){return post(l).catch(function(){rest.push(l)})})});
+  chain.then(function(){store('avs_leads_pendentes',rest)});
+}
+flush(); window.addEventListener('online',flush);
+
+function finish(){
+  finished=true;
+  var p=pkg(ans.pacote), now=new Date(), cls=classify(ans,p);
+  var esp={};
+  steps().forEach(function(k){
+    if(ESPECIFICAS.indexOf(k)<0) return;
+    var q=Q[k], v=ans[k];
+    if(q.type==='choice') v=optLabel(k,v);
+    if(k==='criancas') v = ans.criancas==='sim' ? 'Sim — idades: '+ans.criancasIdades : 'Não';
+    esp[q.label]=v;
+  });
+  var id=cls.charAt(0)+'-'+now.getTime().toString(36).toUpperCase().slice(-6);
+  var lead={
+    id:id,
+    data_hora:now.toISOString(),
+    data_hora_local:now.toLocaleString('pt-BR'),
+    nome:ans.nome,
+    whatsapp:ans.whatsapp,
+    pacote:p.nome,
+    pacote_id:p.id,
+    passageiros:ans.pessoas,
+    cidade:ans.cidade,
+    forma_pagamento:optLabel('pagamento',ans.pagamento),
+    capacidade_investimento: optLabel('investimento',ans.investimento),
+    referencia_investimento:p.ref||'Sob consulta',
+    prazo_fechamento:optLabel('interesse',ans.interesse),
+    respostas_especificas:esp,
+    classificacao:'LEAD '+cls,
+    origem:location.href,
+    utm:utm()
+  };
+  // 1) cópia local  2) fila de envio  3) envio ao sistema de leads
+  var hist=store('avs_leads')||[]; hist.push(lead); store('avs_leads',hist.slice(-50));
+  var pend=store('avs_leads_pendentes')||[]; pend.push(lead); store('avs_leads_pendentes',pend.slice(-20));
+  post(lead).then(function(){
+    var q2=(store('avs_leads_pendentes')||[]).filter(function(l){return l.id!==lead.id}); store('avs_leads_pendentes',q2);
+  }).catch(function(){});
+  try{localStorage.removeItem('avs_form_rascunho')}catch(e){}
+  try{ if(window.dataLayer) dataLayer.push({event:'lead_formulario',pacote:p.id,classificacao:cls}); if(window.fbq) fbq('track','Lead',{content_name:p.nome}); }catch(e){}
+
+  var L=['Olá! Acabei de fazer o check-in no site da Azul Viagens Sorriso.','',
+    '*Pacote:* '+lead.pacote,'*Nome:* '+lead.nome,'*WhatsApp:* '+lead.whatsapp,'*Cidade:* '+lead.cidade,
+    '*Passageiros:* '+lead.passageiros];
+  Object.keys(esp).forEach(function(k){L.push('*'+k+':* '+esp[k])});
+  L.push('*Prazo:* '+lead.prazo_fechamento,'*Pagamento:* '+lead.forma_pagamento,'*Investimento:* '+lead.capacidade_investimento,'','Ref.: '+id);
+  var wa='https://wa.me/'+(CONFIG.WHATSAPP||'')+'?text='+encodeURIComponent(L.join('\n'));
+
+  $('#fStep').textContent='Check-in concluído';
+  $('#fBar i').style.transform='scaleX(1)'; $('#fBar').setAttribute('aria-valuenow',100);
+  nav.style.display='none';
+  body.innerHTML='<div class="done"><div class="stamp">Check-in<br>concluído</div>'+
+    '<h3 id="fTitle" tabindex="-1">Recebemos suas respostas!</h3>'+
+    '<p>Obrigado pelo interesse em viajar com a Azul Viagens Sorriso. Nossa equipe está preparada para ajudar você a encontrar as melhores condições para sua viagem.</p>'+
+    '<a class="btn" id="waBtn" href="'+wa+'" target="_blank" rel="noopener">CONTINUAR PELO WHATSAPP</a>'+
+    '<p class="mono loc">Localizador '+id+'</p></div>';
+  $('#fTitle',body).focus();
+}
+
+window.AVS={abrir:openForm,leads:function(){return store('avs_leads')||[]}};
 })();
 </script>
 </body>
