@@ -334,6 +334,23 @@ footer .links{display:flex;gap:8px 20px;justify-content:center;flex-wrap:wrap;ma
   .fly{transform:translateX(44%)}
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '28830255656675636');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=28830255656675636&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -412,7 +429,7 @@ footer .links{display:flex;gap:8px 20px;justify-content:center;flex-wrap:wrap;ma
 
       <!-- ORLANDO VOO + HOTEL -->
       <article class="ticket has-video reveal" id="orlando-voo-hotel">
-        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-orlando.jpg" aria-label="Vista aérea noturna do centro de Orlando"><source src="video/orlando.mp4" type="video/mp4"></video><span>Orlando</span></div>
+        <div class="t-video"><video muted loop playsinline preload="none" poster="img/video-orlando.jpg" aria-label="Roda-gigante de Orlando ao entardecer, piscina de hotel e montanha-russa"><source src="video/orlando.mp4" type="video/mp4"></video><span>Orlando</span></div>
         <div class="t-main">
           <div class="t-head"><span class="tag">Voo + Hotel</span><span class="who">Voo 01 / 05</span></div>
           <div class="route">
@@ -790,11 +807,11 @@ var CONFIG = {
   // Equipe: uma linha por pessoa. A seção só aparece quando houver alguém aqui.
   // { foto: 'img/equipe-nome.jpg', nome: 'Nome', cargo: 'Cargo' }
   EQUIPE: [
-    { foto: 'img/equipe-1.jpg', nome: '', cargo: '' },
-    { foto: 'img/equipe-2.jpg', nome: '', cargo: '' },
-    { foto: 'img/equipe-3.jpg', nome: '', cargo: '' },
-    { foto: 'img/equipe-4.jpg', nome: '', cargo: '' },
-    { foto: 'img/equipe-5.jpg', nome: '', cargo: '' }
+    { foto: 'img/equipe-1.jpg', nome: 'Ana', cargo: '' },
+    { foto: 'img/equipe-2.jpg', nome: 'Letícia', cargo: '' },
+    { foto: 'img/equipe-3.jpg', nome: 'Marina', cargo: '' },
+    { foto: 'img/equipe-4.jpg', nome: 'Wellington', cargo: '' },
+    { foto: 'img/equipe-5.jpg', nome: 'Luan', cargo: '' }
   ],
   EQUIPE_FRASE: 'Gente de Sorriso que acompanha você do primeiro orçamento até a volta para casa.',
   EQUIPE_FOTO_GRUPO: ''         // opcional. Ex.: 'img/equipe.jpg'
@@ -953,7 +970,7 @@ var ESPECIFICAS = ['passaporte','visto','adultos','criancas','porto','datas','fl
 var PERSONAL = { id:'personalizada', nome:'Viagem personalizada', tipo:'personalizada' };
 
 var modal=$('#modal'), body=$('#fBody'), bNext=$('#fNext'), bBack=$('#fBack'), nav=$('#fNav');
-var ans={}, idx=0, locked=false, lastFocus=null, finished=false;
+var ans={}, idx=0, locked=false, lastFocus=null, finished=false, iniciou=false;
 var urlPkg=null;
 try{ var qp=new URLSearchParams(location.search).get('pacote'); if(qp && pkg(qp)) urlPkg=qp; }catch(e){}
 
@@ -982,7 +999,7 @@ function openForm(id){
   if(!id && draft && draft.pacote===PERSONAL.id) draft=null;
   ans = (draft && (!id || draft.pacote===id)) ? draft : {};
   locked=!!id; if(id) ans.pacote=id;
-  idx=0; finished=false;
+  idx=0; finished=false; iniciou=false;
   modal.classList.add('on'); modal.setAttribute('aria-hidden','false');
   document.documentElement.style.overflow='hidden';
   render(true);
@@ -1104,6 +1121,12 @@ function validate(){
 function next(){
   if(finished || !validate()) return;
   save();
+  if(!iniciou){
+    iniciou=true;
+    var pi=pkg(ans.pacote);
+    try{ if(window.fbq) fbq('track','InitiateCheckout',{content_name:pi?pi.nome:'Check-in geral',content_category:'formulario'});
+         if(window.dataLayer) dataLayer.push({event:'inicio_formulario',pacote:pi?pi.id:''}); }catch(e){}
+  }
   var st=steps();
   if(idx>=st.length-1) return finish();
   idx++; render();
@@ -1182,7 +1205,8 @@ function finish(){
     var q2=(store('avs_leads_pendentes')||[]).filter(function(l){return l.id!==lead.id}); store('avs_leads_pendentes',q2);
   }).catch(function(){});
   try{localStorage.removeItem('avs_form_rascunho')}catch(e){}
-  try{ if(window.dataLayer) dataLayer.push({event:'lead_formulario',pacote:p.id,classificacao:cls}); if(window.fbq) fbq('track','Lead',{content_name:p.nome}); }catch(e){}
+  try{ if(window.dataLayer) dataLayer.push({event:'lead_formulario',pacote:p.id,classificacao:cls}); if(window.fbq) fbq('track','Lead',{content_name:p.nome,content_category:pers?'personalizada':'pacote',status:cls},{eventID:id});
+    if(cls==='QUENTE' && window.fbq) fbq('trackCustom','LeadQuente',{content_name:p.nome}); }catch(e){}
 
   var L=['Olá! Acabei de fazer o check-in no site da Azul Viagens Sorriso.','',
     '*Pacote:* '+lead.pacote,'*Nome:* '+lead.nome,'*WhatsApp:* '+lead.whatsapp];
@@ -1203,6 +1227,31 @@ function finish(){
     '<p class="mono loc">Localizador '+id+'</p></div>';
   $('#fTitle',body).focus();
 }
+
+/* ---------- eventos do Pixel da Meta ---------- */
+function px(tipo,nome,dados){try{ if(window.fbq) fbq(tipo,nome,dados||{}); }catch(e){}}
+// ViewContent: bilhete do pacote visto na tela (uma vez por pacote por visita)
+if('IntersectionObserver' in window){
+  var vistos={};
+  var tio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting || vistos[e.target.id]) return;
+    vistos[e.target.id]=1; tio.unobserve(e.target);
+    var pv=pkg(e.target.id);
+    px('track','ViewContent',{content_name:pv?pv.nome:e.target.id,content_ids:[e.target.id],content_type:'product'});
+  })},{threshold:.5});
+  $$('.ticket[id]').forEach(function(t){tio.observe(t)});
+}
+// Contact (WhatsApp) e clique no Instagram
+document.addEventListener('click',function(e){
+  var a=e.target.closest && e.target.closest('a[href]'); if(!a) return;
+  var h=a.getAttribute('href');
+  if(/wa\.me\//.test(h)){
+    var doForm=a.id==='waBtn', pc=doForm&&ans.pacote?pkg(ans.pacote):null;
+    px('track','Contact',{content_name:pc?pc.nome:'WhatsApp',content_category:doForm?'formulario_concluido':'rodape'});
+  } else if(/instagram\.com/.test(h)){
+    px('trackCustom','CliqueInstagram',{local:a.closest('#story')?'publicacao':'perfil'});
+  }
+},true);
 
 window.AVS={abrir:openForm,leads:function(){return store('avs_leads')||[]}};
 })();
