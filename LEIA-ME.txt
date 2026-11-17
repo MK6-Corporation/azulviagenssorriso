@@ -1,0 +1,26 @@
+AZUL VIAGENS SORRISO — VERSÃO PARA GITHUB PAGES (leads na planilha Google)
+=====================================================================
+
+COMO PUBLICAR
+1. Envie para a raiz do repositório: index.html, .nojekyll e as pastas
+   img/ e video/ (mantendo os nomes em minúsculas).
+2. No repositório: Settings > Pages > Source: "Deploy from a branch",
+   branch main, pasta / (root). Salve.
+3. Em 1 a 2 minutos o site abre em https://USUARIO.github.io/REPOSITORIO/
+   (ou no domínio próprio configurado em Settings > Pages).
+
+NÃO envie as pastas api/ e admin/ da versão antiga: no GitHub Pages o PHP
+não roda e os arquivos ficariam públicos.
+
+LEADS
+Cada formulário concluído é gravado na planilha Google da agência.
+O endereço do script fica no index.html, em CONFIG.LEAD_ENDPOINT.
+Se o script da planilha for alterado, publique em Implantar >
+Gerenciar implantações > editar > Nova versão (o link não muda).
+
+TESTE APÓS PUBLICAR
+[ ] O site abre com fotos e vídeos
+[ ] Preencher o formulário até o fim
+[ ] A linha aparece na planilha em alguns segundos, com a qualificação
+[ ] "CONTINUAR PELO WHATSAPP" abre a conversa com (66) 9220-9985
+[ ] Apagar a linha de teste na planilha

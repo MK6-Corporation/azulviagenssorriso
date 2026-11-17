@@ -212,7 +212,7 @@ header{padding:18px 0;position:relative;z-index:2}
 @media(min-width:901px){.team-photo{height:360px}}
 .team{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .member{flex:0 0 calc(50% - 7px)}
-@media(min-width:901px){.member{flex-basis:calc(25% - 10.5px)}}
+@media(min-width:901px){.member{flex-basis:calc(20% - 11.2px)}}
 .member{position:relative;margin:0;aspect-ratio:4/5;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:var(--card);transition:border-color .3s ease}
 .member:hover{border-color:var(--blue)}
 .member img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .7s ease}
@@ -253,6 +253,11 @@ header{padding:18px 0;position:relative;z-index:2}
 .arrow:disabled{opacity:.35;cursor:default;transform:none;border-color:var(--line)}
 
 /* chamada final */
+.custom{display:grid;gap:24px;align-items:center;background:var(--card);border:1px dashed var(--line);border-radius:18px;padding:28px 22px}
+.custom h2{font-size:clamp(30px,6vw,44px)}
+.custom p{color:var(--txt2);margin-top:12px;max-width:560px}
+.custom .btn{justify-self:start}
+@media(min-width:901px){.custom{grid-template-columns:1fr auto;gap:40px;padding:40px}}
 .final{text-align:center;overflow:hidden}
 .final h2{font-size:clamp(40px,9vw,76px);max-width:820px;margin:0 auto}
 .final p{color:var(--txt2);max-width:520px;margin:20px auto 30px}
@@ -713,6 +718,20 @@ footer .links{display:flex;gap:8px 20px;justify-content:center;flex-wrap:wrap;ma
   </div>
 </section>
 
+<!-- VIAGEM PERSONALIZADA -->
+<section id="personalizada">
+  <div class="wrap">
+    <div class="custom reveal">
+      <div>
+        <span class="label">// Rota sob medida</span>
+        <h2>Outro destino no seu <span class="blue">radar?</span></h2>
+        <p>Conte para onde quer ir, quando e com quantas pessoas. Nossa equipe monta a viagem personalizada com você.</p>
+      </div>
+      <a class="btn" href="#personalizada" data-form="personalizada">Quero uma viagem personalizada</a>
+    </div>
+  </div>
+</section>
+
 <!-- 6. CHAMADA FINAL -->
 <section class="final">
   <div class="atmo"></div>
@@ -774,7 +793,8 @@ var CONFIG = {
     { foto: 'img/equipe-1.jpg', nome: '', cargo: '' },
     { foto: 'img/equipe-2.jpg', nome: '', cargo: '' },
     { foto: 'img/equipe-3.jpg', nome: '', cargo: '' },
-    { foto: 'img/equipe-4.jpg', nome: '', cargo: '' }
+    { foto: 'img/equipe-4.jpg', nome: '', cargo: '' },
+    { foto: 'img/equipe-5.jpg', nome: '', cargo: '' }
   ],
   EQUIPE_FRASE: 'Gente de Sorriso que acompanha você do primeiro orçamento até a volta para casa.',
   EQUIPE_FOTO_GRUPO: ''         // opcional. Ex.: 'img/equipe.jpg'
@@ -924,19 +944,23 @@ var Q = {
   investimento:{type:'choice',title:'O investimento apresentado está dentro do seu planejamento?',label:'Capacidade de investimento',ref:true,opts:[
     ['sim','Sim, está dentro do meu orçamento.'],['parcelar','Sim, desde que consiga parcelar.'],
     ['mais','Posso investir um pouco mais, dependendo das condições.'],['avaliar','Preciso avaliar.']]},
+  destino:{type:'text',title:'Qual destino você está buscando?',label:'Destino',ph:'Ex.: Maceió, Buenos Aires, Paris',field:'Destino'},
+  quando:{type:'text',title:'Em qual data quer realizar a viagem?',label:'Data da viagem',hint:'Pode ser a data exata ou o período aproximado.',ph:'Ex.: 10 a 20 de julho de 2027',field:'Data ou período'},
   cidade:{type:'text',title:'Qual sua cidade de residência?',label:'Cidade de residência',ph:'Ex.: Sorriso – MT',field:'Cidade',ac:'address-level2'},
   contato:{type:'contact',title:'Para quem emitimos o atendimento?',label:'Contato',hint:'Nossa equipe fala com você por este WhatsApp.'}
 };
-var ESPECIFICAS = ['passaporte','visto','adultos','criancas','porto','datas','flex','previsao'];
+var ESPECIFICAS = ['passaporte','visto','adultos','criancas','porto','datas','flex','previsao','destino','quando'];
+var PERSONAL = { id:'personalizada', nome:'Viagem personalizada', tipo:'personalizada' };
 
 var modal=$('#modal'), body=$('#fBody'), bNext=$('#fNext'), bBack=$('#fBack'), nav=$('#fNav');
 var ans={}, idx=0, locked=false, lastFocus=null, finished=false;
 var urlPkg=null;
 try{ var qp=new URLSearchParams(location.search).get('pacote'); if(qp && pkg(qp)) urlPkg=qp; }catch(e){}
 
-function pkg(id){for(var i=0;i<PACOTES.length;i++) if(PACOTES[i].id===id) return PACOTES[i]; return null}
+function pkg(id){if(id===PERSONAL.id) return PERSONAL; for(var i=0;i<PACOTES.length;i++) if(PACOTES[i].id===id) return PACOTES[i]; return null}
 function steps(){
   var p=pkg(ans.pacote), s=[];
+  if(p && p.tipo==='personalizada') return ['pessoas','destino','quando','contato'];
   if(!locked) s.push('pacote');
   s.push('pessoas');
   if(p){
@@ -955,6 +979,7 @@ function openForm(id){
   lastFocus=document.activeElement;
   var draft=store('avs_form_rascunho');
   id = id || urlPkg;
+  if(!id && draft && draft.pacote===PERSONAL.id) draft=null;
   ans = (draft && (!id || draft.pacote===id)) ? draft : {};
   locked=!!id; if(id) ans.pacote=id;
   idx=0; finished=false;
@@ -1121,7 +1146,7 @@ flush(); window.addEventListener('online',flush);
 
 function finish(){
   finished=true;
-  var p=pkg(ans.pacote), now=new Date(), cls=classify(ans,p);
+  var p=pkg(ans.pacote), now=new Date(), pers=p.tipo==='personalizada', cls=pers?'PERSONALIZADA':classify(ans,p);
   var esp={};
   steps().forEach(function(k){
     if(ESPECIFICAS.indexOf(k)<0) return;
@@ -1143,10 +1168,10 @@ function finish(){
     cidade:ans.cidade,
     forma_pagamento:optLabel('pagamento',ans.pagamento),
     capacidade_investimento: optLabel('investimento',ans.investimento),
-    referencia_investimento:p.ref||'Sob consulta',
+    referencia_investimento:pers?'':(p.ref||'Sob consulta'),
     prazo_fechamento:optLabel('interesse',ans.interesse),
     respostas_especificas:esp,
-    classificacao:'LEAD '+cls,
+    classificacao:pers?'VIAGEM PERSONALIZADA':'LEAD '+cls,
     origem:location.href,
     utm:utm()
   };
@@ -1160,10 +1185,12 @@ function finish(){
   try{ if(window.dataLayer) dataLayer.push({event:'lead_formulario',pacote:p.id,classificacao:cls}); if(window.fbq) fbq('track','Lead',{content_name:p.nome}); }catch(e){}
 
   var L=['Olá! Acabei de fazer o check-in no site da Azul Viagens Sorriso.','',
-    '*Pacote:* '+lead.pacote,'*Nome:* '+lead.nome,'*WhatsApp:* '+lead.whatsapp,'*Cidade:* '+lead.cidade,
-    '*Passageiros:* '+lead.passageiros];
+    '*Pacote:* '+lead.pacote,'*Nome:* '+lead.nome,'*WhatsApp:* '+lead.whatsapp];
+  if(!pers) L.push('*Cidade:* '+lead.cidade);
+  L.push('*Passageiros:* '+lead.passageiros);
   Object.keys(esp).forEach(function(k){L.push('*'+k+':* '+esp[k])});
-  L.push('*Prazo:* '+lead.prazo_fechamento,'*Pagamento:* '+lead.forma_pagamento,'*Investimento:* '+lead.capacidade_investimento,'','Ref.: '+id);
+  if(!pers) L.push('*Prazo:* '+lead.prazo_fechamento,'*Pagamento:* '+lead.forma_pagamento,'*Investimento:* '+lead.capacidade_investimento);
+  L.push('','Ref.: '+id);
   var wa='https://wa.me/'+(CONFIG.WHATSAPP||'')+'?text='+encodeURIComponent(L.join('\n'));
 
   $('#fStep').textContent='Check-in concluído';
